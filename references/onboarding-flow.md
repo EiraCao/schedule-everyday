@@ -72,6 +72,14 @@ Feature: Quantity control, 1 big + 3 medium + 5 small per day
 ...
 Feature: Introduces time dimension
 
+【Method D】Choose any of the above methods, plus an Exploration category. Using MoSCoW + Exploration as an example:
+- [Item 1] → Must (Must do)
+- [Item 2] → Should (Should do)
+- [Item 3] → Could (Could do)
+- [Item 4] → Someday (No priority)
+...
+Feature: Introduces a "no priority" dimension; Exploration items have no commitment to output. When you commit to producing something, they can be moved to other categories at any priority level. **Best for those who want to protect their creative ideas without the pressure of a long to-do list.**
+
 Which one do you prefer?
 ```
 
@@ -143,17 +151,13 @@ Does this color scheme work? Any adjustments?
 
 **Question**:
 ```
-Tell me your medium and long-term goals.
+What are your medium and long-term goals? Which ones are more important?
 
-This ensures you spend time on your main goals. Weekly sync will check if you're drifting.
+This ensures your energy isn't wasted on non-essential things. Weekly sync will first check main goals and reserve time for them.
 
-Goals will appear in your task list, so you can see if what you're doing connects to your goals.
+Goals will also appear in your task list, so you can always see and remember them.
 
-If you don't have clear goals yet, just mention what you're focusing on and possible long-term goals. I'll help extract them.
-
-Say as much or as little as you want — can adjust anytime.
-
-What goals do you have? Which are more important? (say "this one's important" to mark)
+What goals do you have? If you don't have clear goals yet, just mention what you're focusing on and possible long-term goals, and I'll help extract potential goals and confirm with you.
 ```
 
 **Processing**:
@@ -173,16 +177,15 @@ I extracted these goals (* marks important ones):
 2. *[Goal 2]
 3. [Goal 3]
 
-Does this look right? Feel free to edit directly.
-(Goals can be changed anytime in conversation, don't worry)
+Does this look right? Let me know if anything needs adjustment.
+(Goals can be changed anytime later in conversation, don't worry)
 
 ---
-
 After confirmation, I'll:
 1. Create daily and weekly sync cron jobs
 2. Test calendar write
 
-Please wait a moment...
+This may take a moment, please wait...
 ```
 
 ### **Post-Step6 Confirmation Actions**: (see following sections for details)
