@@ -127,13 +127,14 @@ description: |
 
 ## 分类方式
 
-支持 3 种分类方式（详见 references/classification-templates.md）：
+支持 4 种分类方式（详见 references/classification-templates.md）：
 
 | 分类方式 | 核心特点 | 适合用户 |
 |----------|----------|----------|
 | **MoSCoW**（推荐） | 强制取舍，4 档简单直观 | 容易把所有事当"重要"的用户 |
 | **1-3-5 技术** | 数量控制，每天 1+3+5 | 容易过度规划的用户 |
 | **Eisenhower 矩阵** | 引入时间维度，四象限 | 需要学会拒绝的用户 |
+| **MoSCoW + Exploration** | 增加「无承诺」维度 | 想保护灵感不被压力淹没的用户 |
 
 ### 日对齐时的分类处理
 
@@ -224,4 +225,4 @@ pnpm openclaw cron rm <id>
 - `references/onboarding-flow.md` — Onboarding 完整流程（7 步）+ 定时任务创建
 - `references/daily-sync-flow.md` — 日对齐流程 + 完整案例
 - `references/weekly-sync-flow.md` — 周对齐流程 + 完整案例
-- `references/classification-templates.md` — 3 种分类模板详解 + 飞书颜色对照表
+- `references/classification-templates.md` — 4 种分类模板详解 + 飞书颜色对照表
