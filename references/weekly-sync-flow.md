@@ -1,277 +1,277 @@
-# 周对齐流程
+# Weekly Sync Flow
 
-本文档描述周对齐的完整流程，包含理想案例供参考。
-
----
-
-## 核心风格
-
-对齐要**轻量自然**，不是审问，也不是清点库存。
-
-- 每次只问一个问题
-- 提供选项，但不要写成 ABCD 这种呆板格式
-- 像朋友聊天一样，语气轻松
-- 用户只需要"拍板"，思考和整理由你完成
-- 主线围绕**方向**（如"求职"），不是具体事项（如"简历"）
+This document describes the complete weekly sync flow, including ideal examples for reference.
 
 ---
 
-## 流程概览
+## Core Style
 
-1. **目标回顾** — 中长期目标进展如何
-2. **回顾刚刚过去的一周** — 完成了哪些，哪些没做
-3. **确认即将到来的一周的主线**（不超过 3 件，精进型优先）
-4. **排持续性习惯** — 固定时间块
-5. **排主线大石头** — 灵活时间块
-6. **检查紧急事项** — 不进主线，单独提醒
-7. **清理事项池** — 升级/删除/合并
+Syncs should be **lightweight and natural**, not an interrogation or inventory check.
 
----
-
-## 详细流程
-
-### Step 1：目标回顾
-
-展示中长期目标，让用户关注方向。
-
-**周日晚对齐**：回顾上周，计划下周
-**周一早对齐**：回顾上周，计划本周
-
-```
-周对齐开始。先看中期目标 — 目前进展如何？
-
-| 目标 | 进展 |
-|------|------|
-| *产品能力 | 日程管理系统已打通 |
-| *内容输出 | 小红书更新中 |
-| 毕业论文 | 开题待完善 |
-| 求职 | 简历初稿完成 |
-```
-
-（标 * 表示重点目标）
-
-### Step 2：回顾刚刚过去的一周
-
-展示完成和没完成的事。
-
-```
-刚刚过去的一周回顾：
-
-✅ 完成的：
-- 日程管理系统打通
-- 简历初稿
-
-⚠️ 没做的：
-- 论文开题没完成
-
-没做的要重新安排吗？
-```
-
-### Step 3：确认即将到来的一周的主线
-
-建议本周主线，重点目标优先。主线围绕方向，不是具体事项。
-
-```
-即将到来的一周建议主线（重点目标优先）：
-
-1. 产品能力：日程管理系统产品化
-2. 毕业论文：完善开题报告 + 约师姐聊
-3. 求职：经历梳理 → 改简历 → 投递
-
-这样安排可以吗？还是想调整？
-```
-
-### Step 4：排持续性习惯
-
-先排固定习惯，再排灵活任务。
-
-```
-先排持续性习惯：
-
-- 暂停实验室练习：每天 19:30-20:00
-- 运动：周一/三/五 20:30-22:00
-- 作息：8:30 起床，0:00 封印手机
-
-这些时间可以吗？
-```
-
-### Step 5：排主线大石头
-
-为主线任务安排时间块。
-
-```
-大石头时间块：
-
-| 日期 | 上午 | 下午 | 晚上 |
-|------|------|------|------|
-| 周一 | 日程管理 | 简历 | 运动 |
-| 周二 | 日程管理 | 分享 | - |
-| 周三 | 经历梳理 | 论文 | 运动 |
-| 周四 | 分享 | 面试辅导 | 运动 |
-| 周五 | 改简历 | 论文 | - |
-
-这个安排可以吗？
-```
-
-### Step 6：检查紧急事项
-
-检查不进主线但需要关注的紧急事项。
-
-根据分类方式检查对应分类：
-**MoSCoW 方式**：检查 Must 中临期的
-**1-3-5 方式**：检查大任务候选中临期的
-**Eisenhower 方式**：检查 Q1
-
-```
-紧急事项检查：
-
-⚠️ 劳动教育课 3/12（周三）截止 → 已设提醒
-⚠️ 数理统计作业周一交 → 今天完成
-
-这些不会进入主线，但别忘了做。
-```
-
-### Step 7：清理事项池
-
-检查事项池中需要处理的项。
-
-根据分类方式检查对应分类：
-**MoSCoW 方式**：检查 Could/Won't
-**1-3-5 方式**：检查事项池中很久没动的
-**Eisenhower 方式**：检查 Q3/Q4
-
-```
-事项池清理：
-
-「日程管理 Agent」有一阵没提了，还想做吗？
-- 想做，升级到高优先级
-- 保留，之后再看看
-- 不做了，删掉
-```
+- Ask only one question at a time
+- Provide options, but avoid rigid ABCD formats
+- Chat like a friend, keep the tone relaxed
+- User only needs to "approve" — thinking and organizing is your job
+- Main focus revolves around **directions** (e.g., "job search"), not specific items (e.g., "resume")
 
 ---
 
-## 周对齐完整案例
+## Flow Overview
 
-**秘书**：
-
-> 周对齐开始。先看中期目标 — 目前进展如何？
->
-> | 目标 | 进展 |
-> |------|------|
-> | *产品能力 | 日程管理系统已打通 |
-> | *内容输出 | 小红书更新中 |
-> | 毕业论文 | 开题待完善 |
-> | 求职 | 简历初稿完成 |
-
-**用户**：嗯，差不多。
-
-**秘书**：
-
-> 刚刚过去的一周回顾：
->
-> ✅ 完成的：
-> - 日程管理系统打通
-> - 简历初稿
->
-> ⚠️ 没做的：
-> - 论文开题没完成
->
-> 没做的要重新安排吗？
-
-**用户**：要，这周继续。
-
-**秘书**：
-
-> 即将到来的一周建议主线（重点目标优先）：
->
-> 1. 产品能力：日程管理系统产品化
-> 2. 毕业论文：完善开题报告 + 约师姐聊
-> 3. 求职：经历梳理 → 面试辅导 → 改简历 → 投递
->
-> 这样安排可以吗？
-
-**用户**：可以。
-
-**秘书**：
-
-> 先排持续性习惯：
->
-> - 暂停实验室练习：每天 19:30-20:00
-> - 运动：周一/三/五 20:30-22:20
-> - 作息：8:30 起床，0:00 封印手机
->
-> 这些时间可以吗？
-
-**用户**：可以。
-
-**秘书**：
-
-> 大石头时间块：
->
-> | 日期 | 上午 | 下午 | 晚上 |
-> |------|------|------|------|
-> | 周一 | 日程管理 | 简历 | 运动 |
-> | 周二 | 日程管理 | 分享 | - |
-> | 周三 | 经历梳理 | 论文 | 运动 |
-> | 周四 | 分享 | 面试辅导 | 运动 |
-> | 周五 | 改简历 | 论文 | - |
->
-> 这个安排可以吗？
-
-**用户**：可以，没问题。
-
-**秘书**：
-
-> 紧急事项检查：
->
-> ⚠️ 劳动教育课 3/12（周三）24:00 截止 → 已设提醒
-> ⚠️ 数理统计作业周一交 → 今天完成
->
-> 事项池清理：
->
-> 「日程管理 Agent」有一阵没提了，还想做吗？
-
-**用户**：想做，升级到高优先级。
-
-**秘书**：
-
-> ✅ 已升级。
->
-> 周对齐完成。明天会有日对齐。
->
-> 这周加油！
+1. **Goal review** — How's progress on medium/long-term goals
+2. **Review the week just passed** — What was completed, what wasn't
+3. **Confirm main focus for the coming week** (no more than 3 items, improvement-focused first)
+4. **Schedule recurring habits** — Fixed time blocks
+5. **Schedule main focus big rocks** — Flexible time blocks
+6. **Check urgent items** — Don't enter main focus, remind separately
+7. **Clean up task pool** — Upgrade/delete/merge
 
 ---
 
-## 定时任务消息模板
+## Detailed Flow
 
-定时任务的消息是发给 **OpenClaw** 的，不是直接发给用户的。
+### Step 1: Goal Review
+
+Display medium/long-term goals, let user focus on direction.
+
+**Sunday evening sync**: Review last week, plan next week
+**Monday morning sync**: Review last week, plan this week
+
+```
+Weekly sync starting. First let's look at medium-term goals — how's progress?
+
+| Goal | Progress |
+|------|----------|
+| *Product Skills | Schedule management system connected |
+| *Content Output | Xiaohongshu updating |
+| Graduation Thesis | Proposal needs refinement |
+| Job Search | Resume draft complete |
+```
+
+(* marks important goals)
+
+### Step 2: Review the Week Just Passed
+
+Display completed and incomplete items.
+
+```
+Review of the week just passed:
+
+✅ Completed:
+- Schedule management system connected
+- Resume draft
+
+⚠️ Didn't do:
+- Thesis proposal not finished
+
+Want to reschedule the incomplete items?
+```
+
+### Step 3: Confirm Main Focus for the Coming Week
+
+Suggest this week's main focus, prioritizing important goals. Main focus revolves around directions, not specific items.
+
+```
+Suggested main focus for the coming week (important goals first):
+
+1. Product Skills: Schedule management system productization
+2. Graduation Thesis: Refine proposal + Chat with senior
+3. Job Search: Experience梳理 → Revise resume → Submit applications
+
+Does this work? Or want to adjust?
+```
+
+### Step 4: Schedule Recurring Habits
+
+Schedule fixed habits first, then flexible tasks.
+
+```
+First let's schedule recurring habits:
+
+- Pause Lab exercises: Daily 19:30-20:00
+- Exercise: Mon/Wed/Fri 20:30-22:00
+- Sleep schedule: 8:30 wake up, 0:00 phone lockdown
+
+Do these times work?
+```
+
+### Step 5: Schedule Main Focus Big Rocks
+
+Arrange time blocks for main focus tasks.
+
+```
+Big rock time blocks:
+
+| Day | Morning | Afternoon | Evening |
+|-----|---------|-----------|---------|
+| Mon | Schedule mgmt | Resume | Exercise |
+| Tue | Schedule mgmt | Sharing | - |
+| Wed | Experience review | Thesis | Exercise |
+| Thu | Sharing | Interview prep | Exercise |
+| Fri | Revise resume | Thesis | - |
+
+Does this schedule work?
+```
+
+### Step 6: Check Urgent Items
+
+Check urgent items that won't enter main focus but need attention.
+
+Based on classification method, check corresponding categories:
+**MoSCoW method**: Check Must for upcoming deadlines
+**1-3-5 method**: Check big task candidates for upcoming items
+**Eisenhower method**: Check Q1
+
+```
+Urgent items check:
+
+⚠️ Labor education course due 3/12 (Wed) → Reminder set
+⚠️ Mathematical Statistics homework due Monday → Complete today
+
+These won't enter main focus, but don't forget to do them.
+```
+
+### Step 7: Clean Up Task Pool
+
+Check items in the task pool that need attention.
+
+Based on classification method, check corresponding categories:
+**MoSCoW method**: Check Could/Won't
+**1-3-5 method**: Check items in task pool that haven't moved in a while
+**Eisenhower method**: Check Q3/Q4
+
+```
+Task pool cleanup:
+
+"Schedule Management Agent" hasn't been mentioned in a while — still want to do it?
+- Yes, upgrade to high priority
+- Keep, check later
+- No, delete it
+```
+
+---
+
+## Weekly Sync Complete Example
+
+**Assistant**:
+
+> Weekly sync starting. First let's look at medium-term goals — how's progress?
+>
+> | Goal | Progress |
+> |------|----------|
+> | *Product Skills | Schedule management system connected |
+> | *Content Output | Xiaohongshu updating |
+> | Graduation Thesis | Proposal needs refinement |
+> | Job Search | Resume draft complete |
+
+**User**: Yeah, about right.
+
+**Assistant**:
+
+> Review of the week just passed:
+>
+> ✅ Completed:
+> - Schedule management system connected
+> - Resume draft
+>
+> ⚠️ Didn't do:
+> - Thesis proposal not finished
+>
+> Want to reschedule the incomplete items?
+
+**User**: Yes, continue this week.
+
+**Assistant**:
+
+> Suggested main focus for the coming week (important goals first):
+>
+> 1. Product Skills: Schedule management system productization
+> 2. Graduation Thesis: Refine proposal + Chat with senior
+> 3. Job Search: Experience梳理 → Interview prep → Revise resume → Submit applications
+>
+> Does this work?
+
+**User**: Works for me.
+
+**Assistant**:
+
+> First let's schedule recurring habits:
+>
+> - Pause Lab exercises: Daily 19:30-20:00
+> - Exercise: Mon/Wed/Fri 20:30-22:20
+> - Sleep schedule: 8:30 wake up, 0:00 phone lockdown
+>
+> Do these times work?
+
+**User**: Yes, they work.
+
+**Assistant**:
+
+> Big rock time blocks:
+>
+> | Day | Morning | Afternoon | Evening |
+> |-----|---------|-----------|---------|
+> | Mon | Schedule mgmt | Resume | Exercise |
+> | Tue | Schedule mgmt | Sharing | - |
+> | Wed | Experience review | Thesis | Exercise |
+> | Thu | Sharing | Interview prep | Exercise |
+> | Fri | Revise resume | Thesis | - |
+>
+> Does this schedule work?
+
+**User**: Yes, no problem.
+
+**Assistant**:
+
+> Urgent items check:
+>
+> ⚠️ Labor education course due 3/12 (Wed) 24:00 → Reminder set
+> ⚠️ Mathematical Statistics homework due Monday → Complete today
+>
+> Task pool cleanup:
+>
+> "Schedule Management Agent" hasn't been mentioned in a while — still want to do it?
+
+**User**: Yes, upgrade to high priority.
+
+**Assistant**:
+
+> ✅ Upgraded.
+>
+> Weekly sync complete. Daily sync tomorrow.
+>
+> Let's have a great week!
+
+---
+
+## Cron Job Message Template
+
+Cron job messages are sent to **OpenClaw**, not directly to users.
 
 ```bash
 pnpm openclaw cron add \
-  --name "周对齐" \
+  --name "Weekly Sync" \
   --cron "0 19 * * 0" \
   --tz "Asia/Shanghai" \
-  --message "【周对齐提醒】
+  --message "[Weekly Sync Reminder]
 
-现在到每周对齐时间了。
+It's time for weekly sync.
 
-请执行 schedule-everyday skill 的周对齐流程。
+Please execute schedule-everyday skill's weekly sync flow.
 
-⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
-2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
-3. 更新事项清单前必须先读取最新内容
-4. 然后按照本流程文档执行
+⚠️ Important:
+1. First read user config: ~/.openclaw/workspace/skills/schedule-everyday/config.yaml
+2. Then read task list (Feishu doc token in config's storage.feishu_doc_token)
+3. Must read latest content before updating task list
+4. Then follow this flow document
 
-请直接向用户发送开场消息（不要说任何"收到"之类的话）：
+Send opening message directly to user (don't say anything like "received"):
 
-📅 周对齐时间到了。
+📅 Weekly sync time.
 
-先看中期目标 — 目前进展如何？
+First let's look at medium-term goals — how's progress?
 
-[根据配置中的 goals 字段展示目标表格]" \
+[Display goals table based on config.goals field]" \
   --channel feishu \
   --to "ou_xxx" \
   --announce

@@ -1,75 +1,67 @@
 # Schedule Everyday
 
-[English](./README.en.md) | 简体中文
+A skill designed to **reduce cognitive load** — Schedule Everyday handles the thinking and organizing like a personal secretary. Users just need to "decide".
 
-一个「数字秘书」skill，核心目标是**减少认知负担**。用户只需「拍板」，思考和整理由秘书完成。
+## Features
 
-## 功能
+- **Onboarding** — Guide users to set up classification method, calendar config, and goals
+- **Daily Sync** — Identify main tasks, scan upcoming deadlines, confirm schedule
+- **Weekly Sync** — Review goals, reflect on last week, plan this week's priorities
+- **Task Management** — Add/update/archive tasks
 
-- **Onboarding** — 引导设置分类方式、日历配置、中长期目标
-- **日对齐** — 确定主线任务、扫描临期事项、确认日程
-- **周对齐** — 目标回顾、上周回顾、本周主线、习惯排期
-- **事项管理** — 添加/更新/归档事项
+## Trigger Phrases
 
-## 触发词
+- Daily sync: "align", "today's plan", "daily sync"
+- Weekly sync: "weekly sync", "this week"
+- Task management: "add task", "show my list", "what's pending"
+- Setup: "setup preferences", "initialize schedule"
 
-- 日对齐：「对齐一下」「今天安排」「日对齐」「daily sync」
-- 周对齐：「周对齐」「weekly sync」「这周安排」
-- 事项管理：「添加事项」「记录一个事情」「看看我的清单」
-- 设置：「设置日程偏好」「初始化日程」
+## Classification Methods
 
-## 分类方式
+Supports 3 classification styles:
 
-支持 3 种分类：
+| Method | Key Feature | Best For |
+|--------|-------------|----------|
+| **MoSCoW** (Recommended) | Forces prioritization, 4 simple tiers | Users who treat everything as "important" |
+| **1-3-5 Rule** | Quantity control, 1+3+5 tasks per day | Users who tend to over-plan |
+| **Eisenhower Matrix** | Time dimension, 4 quadrants | Users who need to learn to say no |
 
-| 方式 | 特点 | 适合 |
-|------|------|------|
-| **MoSCoW**（推荐） | 强制取舍，4 档简单直观 | 容易把所有事当「重要」的用户 |
-| **1-3-5 技术** | 数量控制，每天 1+3+5 | 容易过度规划的用户 |
-| **Eisenhower 矩阵** | 引入时间维度，四象限 | 需要学会拒绝的用户 |
-
-## 安装
+## Installation
 
 ### OpenClaw
 
 ```bash
 cd ~/.openclaw/workspace/skills/
-git clone https://github.com/EiraCao/schedule-everyday.git
+git clone -b en https://github.com/EiraCao/schedule-everyday.git
 ```
 
 ### Claude Code
 
 ```bash
 cd ~/.claude/skills/
-git clone https://github.com/EiraCao/schedule-everyday.git
+git clone -b en https://github.com/EiraCao/schedule-everyday.git
 ```
 
-## 文件结构
+## File Structure
 
 ```
 schedule-everyday/
-├── SKILL.md                      # Skill 主文件
-├── README.md                     # 中文文档（本文件）
-├── README.en.md                  # English documentation
+├── SKILL.md                      # Main skill file
+├── README.md                     # This file
 ├── references/
-│   ├── onboarding-flow.md        # Onboarding 流程
-│   ├── daily-sync-flow.md        # 日对齐流程
-│   ├── weekly-sync-flow.md       # 周对齐流程
-│   ├── classification-templates.md # 分类模板
-│   └── en/                       # English flow docs
-│       ├── onboarding-flow.md
-│       ├── daily-sync-flow.md
-│       ├── weekly-sync-flow.md
-│       └── classification-templates.md
+│   ├── onboarding-flow.md        # Onboarding flow
+│   ├── daily-sync-flow.md        # Daily sync flow
+│   ├── weekly-sync-flow.md       # Weekly sync flow
+│   └── classification-templates.md # Classification templates
 └── assets/
-    └── config_template.yaml      # 配置模板
+    └── config_template.yaml      # Config template
 ```
 
-## 核心原则
+## Core Principles
 
-1. **小问题 + 给选项** — 每次只问一个问题，提供 2-4 个选项
-2. **非评判语气** — 关心支持，不给压力，不说「你应该」
-3. **先读再写** — 更新事项清单前，必须先读取最新内容
+1. **Small questions + Options** — Ask one question at a time, provide 2-4 choices
+2. **Non-judgmental tone** — Be supportive, no pressure, avoid "you should"
+3. **Read before write** — Always read the latest content before updating the task list
 
 ## License
 

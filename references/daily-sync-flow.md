@@ -1,297 +1,297 @@
-# 日对齐流程
+# Daily Sync Flow
 
-本文档描述日对齐的完整流程，包含理想案例供参考。
-
----
-
-## 核心风格
-
-对齐要**轻量自然**，不是审问，也不是清点库存。
-
-- 每次只问一个问题
-- 提供选项，但不要写成 ABCD 这种呆板格式
-- 像朋友聊天一样，语气轻松
-- 用户只需要"拍板"，思考和整理由你完成
-- **基于具体事情问**，不要问太开放的问题
-- 可以**猜测和预判**，不一定要让用户选
+This document describes the complete daily sync flow, including ideal examples for reference.
 
 ---
 
-## 流程开始前的准备
+## Core Style
 
-**⚠️ 必须先读取**：
-1. 读取用户配置：`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
-2. 读取事项清单（飞书文档 token 在配置的 `storage.feishu_doc_token`）
-3. **同时查看飞书日历**，了解今天的固定安排
+Syncs should be **lightweight and natural**, not an interrogation or inventory check.
 
----
-
-## 流程概览
-
-1. **回顾刚刚过去的一天** — 基于具体事情问
-2. **确定即将到来的一天的主线** — 可以猜测预判
-3. **扫描临期事项** — 同时看日历和清单
-4. **创建定时提醒** — 确认临期小事的时间，立即创建提醒
-5. **确认固定安排** — 从日历已经能看到就直接确认
-6. **填充空闲时间** — 主线任务排到什么时候
-7. **如果有大片空白，推荐探索类事项**
+- Ask only one question at a time
+- Provide options, but avoid rigid ABCD formats
+- Chat like a friend, keep the tone relaxed
+- User only needs to "approve" — thinking and organizing is your job
+- **Ask based on specific items**, don't ask overly open questions
+- You can **guess and anticipate**, you don't always have to let the user choose
 
 ---
 
-## 详细流程
+## Pre-Flow Preparation
 
-### Step 0：开场消息（重要）
+**⚠️ Must read first**:
+1. Read user config: `~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
+2. Read task list (Feishu doc token in config's `storage.feishu_doc_token`)
+3. **Also check Feishu calendar** to understand today's fixed schedule
 
-**⚠️ 开场消息要基于用户具体事项来问，不要问太开放的问题！**
+---
 
-**错误示例**：
+## Flow Overview
+
+1. **Review the day just passed** — Ask based on specific items
+2. **Determine the main focus for the coming day** — Can guess and anticipate
+3. **Scan upcoming deadlines** — Check both calendar and task list
+4. **Create timed reminders** — Confirm times for small deadline items, create reminders immediately
+5. **Confirm fixed schedule** — If already visible from calendar, just confirm
+6. **Fill free time** — When to schedule main focus tasks
+7. **If large gaps remain, recommend exploration items**
+
+---
+
+## Detailed Flow
+
+### Step 0: Opening Message (Important)
+
+**⚠️ Opening message should be based on user's specific items, don't ask overly open questions!**
+
+**Wrong example**:
 ```
-❌ 刚刚过去的一天怎么样？
+❌ How was your day?
 ```
-太开放了，用户一时无法回答。
+Too open-ended, user won't know how to answer.
 
-**正确示例**（基于事项）：
+**Correct examples** (based on items):
 ```
-✅ 简历写得怎么样？写出一版了吗？
-✅ 论文改得如何？今天能交吗？
-✅ 昨天主线是产品文档，完成了吗？
-```
-
-如果不知道之前安排了什么：
-```
-✅ 昨天做了什么？主线完成了吗？
-```
-
-### Step 1：回顾刚刚过去的一天
-
-先问过去的情况，建立连续性。
-
-**晚上日对齐**：回顾今天白天
-**早上日对齐**：回顾昨天
-
-**基于事项的问法**：
-```
-简历写得怎么样？写出一版了吗？
-```
-
-### Step 2：确定即将到来的一天的主线
-
-问最重要的一件事，**可以猜测预判**。
-
-**晚上日对齐**：计划明天
-**早上日对齐**：计划今天
-
-**可以猜测的问法**：
-```
-明天继续写简历？
-
-看你有论文周五要交，简历也在进行中。论文时间更紧，明天要不先推论文？
+✅ How's the resume coming? Did you finish a draft?
+✅ How's the paper revision going? Can you submit today?
+✅ Yesterday's main focus was the product doc — did you finish it?
 ```
 
-**也可以给时间选项**：
+If you don't know what was planned:
 ```
-主线任务想给自己留多长时间？2小时紧凑一点，3小时宽松一点？
-```
-
-### Step 3：扫描临期事项
-
-**同时看日历和事项清单**，检查有没有快到期的事。
-
-根据用户选择的分类方式，检查对应的高优先级分类：
-- **MoSCoW 方式**：检查 Must 分类中临期/过期的事项
-- **1-3-5 方式**：检查大任务候选中临期的事项
-- **Eisenhower 方式**：检查 Q1（紧急且重要）
-
-**示例**：
-
-```
-我看了一下，有几件临期的事：
-
-- 作业邮件提交 — 昨天就该交了
-- 拿快递 — 今天不拿就过期了
-
-这两个什么时候做？
+✅ What did you do yesterday? Did you complete the main focus?
 ```
 
-### Step 4：创建定时提醒
+### Step 1: Review the Day Just Passed
 
-用户确认临期小事的时间后，**立即创建提醒**并确认"已设置"。
+First ask about the past to establish continuity.
 
+**Evening daily sync**: Review today's daytime
+**Morning daily sync**: Review yesterday
+
+**Item-based questioning**:
 ```
-✅ 已设置：
-- 15:30 提醒：提交作业
-- 20:00 提醒：拿快递
-```
-
-### Step 5：确认固定安排
-
-**如果从日历已经能看到**，直接确认：
-
-```
-我看到明天有这些固定安排：
-
-- 14:00-15:30 数理统计
-- 16:00-18:30 公司任务
-
-还有其他的吗？
+How's the resume coming? Did you finish a draft?
 ```
 
-**如果看不到**，再问：
+### Step 2: Determine the Main Focus for the Coming Day
+
+Ask about the most important thing, **you can guess and anticipate**.
+
+**Evening daily sync**: Plan tomorrow
+**Morning daily sync**: Plan today
+
+**Guessing approach**:
 ```
-明天有固定的安排吗？课程、会议之类的？
-```
+Continue working on the resume tomorrow?
 
-### Step 6：填充空闲时间
-
-计算剩余时间，问主线任务排到什么时候。
-
-```
-现在看剩下的时间：
-
-- 18:30-20:00 晚饭
-- 20:00 后有空
-
-主线任务（写简历）排到什么时候？
+I see you have a paper due Friday and the resume in progress. The paper is more time-sensitive — want to push the paper first tomorrow?
 ```
 
-### Step 7：如果有大片空白，推荐探索类事项
+**Can also give time options**:
+```
+How much time do you want to set aside for the main focus? 2 hours for something tighter, 3 hours for more relaxed?
+```
 
-主线任务排完后，如果日历还有大片空白，推荐探索类事项。
+### Step 3: Scan Upcoming Deadlines
 
-根据分类方式检查对应分类：
-- **MoSCoW 方式**：从 Could 分类推荐
-- **1-3-5 方式**：从小任务候选推荐
-- **Eisenhower 方式**：从 Q2 推荐（长期价值任务）
+**Check both calendar and task list** for items coming due soon.
+
+Based on user's chosen classification method, check corresponding high-priority categories:
+- **MoSCoW method**: Check Must category for upcoming/overdue items
+- **1-3-5 method**: Check big task candidates for upcoming items
+- **Eisenhower method**: Check Q1 (Urgent & Important)
+
+**Example**:
 
 ```
-还有一小段空着。探索类里有几个项目，要不要安排？
+I checked and found a few upcoming deadlines:
 
-- 日程管理 Agent
-- AI 社交产品调研
+- Assignment email submission — was due yesterday
+- Pick up package — expires today if not picked up
+
+When will you do these?
+```
+
+### Step 4: Create Timed Reminders
+
+After user confirms times for small deadline items, **create reminders immediately** and confirm "set".
+
+```
+✅ Set:
+- 15:30 reminder: Submit assignment
+- 20:00 reminder: Pick up package
+```
+
+### Step 5: Confirm Fixed Schedule
+
+**If already visible from calendar**, just confirm:
+
+```
+I see these fixed commitments tomorrow:
+
+- 14:00-15:30 Mathematical Statistics
+- 16:00-18:30 Company task
+
+Anything else?
+```
+
+**If not visible**, then ask:
+```
+Any fixed commitments tomorrow? Classes, meetings, etc.?
+```
+
+### Step 6: Fill Free Time
+
+Calculate remaining time, ask when to schedule main focus tasks.
+
+```
+Looking at remaining time:
+
+- 18:30-20:00 Dinner
+- After 20:00 is free
+
+When do you want to schedule the main focus (resume writing)?
+```
+
+### Step 7: If Large Gaps Remain, Recommend Exploration Items
+
+After main focus tasks are scheduled, if calendar still has large gaps, recommend exploration items.
+
+Based on classification method, check corresponding categories:
+- **MoSCoW method**: Recommend from Could category
+- **1-3-5 method**: Recommend from small task candidates
+- **Eisenhower method**: Recommend from Q2 (long-term value tasks)
+
+```
+There's still a small gap open. There are a few items in exploration — want to schedule one?
+
+- Schedule Management Agent
+- AI Social Product Research
 ```
 
 ---
 
-## 日对齐完整案例
+## Daily Sync Complete Example
 
-**秘书**：
+**Assistant**:
 
-> 简历写得怎么样？写出一版了吗？
+> How's the resume coming? Did you finish a draft?
 
-**用户**：还行，写了但没写完，今天继续。
+**User**: It's okay, I wrote some but didn't finish. Continuing today.
 
-**秘书**：
+**Assistant**:
 
-> 收到。今天继续写简历，想给自己留多长时间？2小时紧凑一点，3小时宽松一点？
+> Got it. Continuing on the resume today — how much time do you want to set aside? 2 hours for something tighter, 3 hours for more relaxed?
 
-**用户**：2小时吧，希望可以写完一版。
+**User**: 2 hours. Hope to finish a draft.
 
-**秘书**：
+**Assistant**:
 
-> 明白，写简历 2 小时，目标是写完一版。
+> Understood, 2 hours on resume writing, goal is to finish a draft.
 >
-> 我看了一下，有几件临期的事：
+> I checked and found a few upcoming deadlines:
 >
-> - ⚠️ 作业邮件提交：昨天就该交
-> - ⚠️ 拿快递：今天不拿就过期
+> - ⚠️ Assignment email submission: Was due yesterday
+> - ⚠️ Pick up package: Expires today if not picked up
 >
-> 这两个什么时候做？
+> When will you do these?
 
-**用户**：作业下课做，快递晚上拿。
+**User**: Assignment after class, package in the evening.
 
-**秘书**：
+**Assistant**:
 
-> ✅ 已设置：
-> - 15:30 提醒：提交作业
-> - 20:00 提醒：拿快递
+> ✅ Set:
+> - 15:30 reminder: Submit assignment
+> - 20:00 reminder: Pick up package
 >
-> 我看到今天有这些固定安排：
+> I see these fixed commitments today:
 >
-> - 14:00-15:30 数理统计
-> - 16:00-18:30 公司任务
+> - 14:00-15:30 Mathematical Statistics
+> - 16:00-18:30 Company task
 >
-> 还有其他的吗？
+> Anything else?
 
-**用户**：没有了。
+**User**: No, nothing else.
 
-**秘书**：
+**Assistant**:
 
-> 明白了。今天的安排：
+> Got it. Today's schedule:
 >
-> - 14:00-15:30 数理统计
-> - 15:30 ⏰ 提醒：提交作业
-> - 16:00-18:30 公司任务
-> - 18:30-20:00 晚饭
-> - 20:00 ⏰ 提醒：拿快递
+> - 14:00-15:30 Mathematical Statistics
+> - 15:30 ⏰ Reminder: Submit assignment
+> - 16:00-18:30 Company task
+> - 18:30-20:00 Dinner
+> - 20:00 ⏰ Reminder: Pick up package
 >
-> 剩下 20:00 后有空。写简历排到什么时候？
+> After 20:00 is free. When do you want to schedule resume writing?
 
-**用户**：21:00-23:00 吧。
+**User**: 21:00-23:00.
 
-**秘书**：
+**Assistant**:
 
-> ✅ 日历已更新：21:00-23:00 写简历
+> ✅ Calendar updated: 21:00-23:00 Resume writing
 >
-> 还有 20:30-21:00 一小段空着。探索类里有几个项目，要不要安排？
+> There's still 20:30-21:00 open. Want to schedule something from exploration?
 
-**用户**：20:30-21:00 做暂停实验室练习。
+**User**: 20:30-21:00 do Pause Lab exercises.
 
-**秘书**：
+**Assistant**:
 
-> ✅ 已添加。
+> ✅ Added.
 >
-> **今天安排确认**：
+> **Today's schedule confirmed**:
 >
-> - 14:00-15:30 数理统计
-> - 15:30 ⏰ 提醒：提交作业
-> - 16:00-18:30 公司任务
-> - 18:30-20:00 晚饭
-> - 20:00 ⏰ 提醒：拿快递
-> - 20:30-21:00 暂停实验室
-> - 21:00-23:00 写简历
+> - 14:00-15:30 Mathematical Statistics
+> - 15:30 ⏰ Reminder: Submit assignment
+> - 16:00-18:30 Company task
+> - 18:30-20:00 Dinner
+> - 20:00 ⏰ Reminder: Pick up package
+> - 20:30-21:00 Pause Lab
+> - 21:00-23:00 Resume writing
 >
-> 没问题？
+> All good?
 
-**用户**：没问题了。
+**User**: All good.
 
-**秘书**：
+**Assistant**:
 
-> 好的，日对齐完成。
+> Alright, daily sync complete.
 
 ---
 
-## 定时任务消息模板
+## Cron Job Message Template
 
-定时任务的消息是发给 **OpenClaw** 的，不是直接发给用户的。
+Cron job messages are sent to **OpenClaw**, not directly to users.
 
-**⚠️ 开场消息要基于具体事项来问！**
+**⚠️ Opening message should be based on specific items!**
 
 ```bash
 pnpm openclaw cron add \
-  --name "日对齐" \
+  --name "Daily Sync" \
   --cron "30 21 * * *" \
   --tz "Asia/Shanghai" \
-  --message "【日对齐提醒】
+  --message "[Daily Sync Reminder]
 
-现在到每日对齐时间了。
+It's time for daily sync.
 
-请执行 schedule-everyday skill 的日对齐流程。
+Please execute schedule-everyday skill's daily sync flow.
 
-⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
-2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
-3. 同时查看飞书日历，了解今天的固定安排
-4. 更新事项清单前必须先读取最新内容
-5. 然后按照本流程文档执行
+⚠️ Important:
+1. First read user config: ~/.openclaw/workspace/skills/schedule-everyday/config.yaml
+2. Then read task list (Feishu doc token in config's storage.feishu_doc_token)
+3. Also check Feishu calendar to understand today's fixed schedule
+4. Must read latest content before updating task list
+5. Then follow this flow document
 
-请直接向用户发送开场消息（不要说任何"收到"之类的话）：
+Send opening message directly to user (don't say anything like "received"):
 
-⚠️ 开场消息要基于用户具体事项来问，不要问"刚刚过去的一天怎么样？"这种太开放的问题！
+⚠️ Opening message should be based on user's specific items, don't ask "How was your day?" — too open-ended!
 
-例如：
-- 如果昨天主线是写简历：「简历写得怎么样？写出一版了吗？」
-- 如果昨天主线是论文：「论文改得如何？今天能交吗？」
-- 如果不知道昨天做了什么：「昨天做了什么？主线完成了吗？」" \
+Examples:
+- If yesterday's main focus was resume: "How's the resume coming? Did you finish a draft?"
+- If yesterday's main focus was paper: "How's the paper revision going? Can you submit today?"
+- If you don't know what was done yesterday: "What did you do yesterday? Did you complete the main focus?"" \
   --channel feishu \
   --to "ou_xxx" \
   --announce

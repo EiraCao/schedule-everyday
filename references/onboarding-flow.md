@@ -1,349 +1,340 @@
-# Onboarding 流程详解
+# Onboarding Flow
 
-## 触发条件
+## Triggers
 
-1. **首次使用**：配置文件不存在
-2. **用户请求**：用户说以下任一短语：
-   - "设置日程偏好"
-   - "配置日程管理"
-   - "初始化日程"
-   - "重新设置"
-
----
-
-## 流程总览
-
-```
-Step 1: 收集最近事项 → 创建飞书文档
-Step 2: 选择分类方式
-Step 3: 日对齐/周对齐时间
-Step 4: 日历颜色设置
-Step 5: 中长期目标
-Step 6: 确认目标 → 创建定时任务 + 测试日历写入
-Step 7: 完成
-```
+1. **First-time use**: Config file doesn't exist
+2. **User request**: User says any of these phrases:
+   - "setup preferences"
+   - "configure schedule"
+   - "initialize"
+   - "reset"
 
 ---
 
-## 详细流程
+## Flow Overview
 
-### Step 1：收集最近事项
-
-**问题**：
 ```
-告诉我几件你最近在做的事情，一股脑说即可。
-（这个事项清单会长期维护，随时补充和归档）
+Step 1: Collect recent tasks → Create document
+Step 2: Choose classification method
+Step 3: Set daily/weekly sync times
+Step 4: Calendar color setup
+Step 5: Medium/long-term goals
+Step 6: Confirm → Create cron jobs + Test calendar write
+Step 7: Complete
 ```
-
-**处理**：
-- 用户说完后，自动梳理
-- 提取关键事项
-- 为下一步分类展示做准备
-- **立即创建飞书文档**（见"飞书文档创建"章节）
-- 给用户 full_access 权限
 
 ---
 
-### Step 2：选择分类方式
+## Detailed Flow
 
-**问题**：
+### Step 1: Collect Recent Tasks
+
+**Question**:
 ```
-我提供几种分类方式，你可以看到按每种方式分类后，你刚才说的事情会呈现什么样子：
+Tell me a few things you've been working on lately. Just say whatever comes to mind.
+(This task list will be maintained long-term, add and archive anytime)
+```
 
-（⚠️ 下面只是展示分类后的样子，你可以自己决定每个事项具体分到哪个类别）
+**Processing**:
+- Organize user's input
+- Extract key items
+- Prepare for classification display
+- **Immediately create document** (see "Document Creation" section)
+- Grant user full_access permission
 
-【分类方式 A】MoSCoW（推荐）
-- [事项1] → Must（必须做）
-- [事项2] → Should（应该做）
-- [事项3] → Could（可以做）
+---
+
+### Step 2: Choose Classification Method
+
+**Question**:
+```
+I offer a few classification methods. You can see how your items would look under each:
+
+(⚠️ Below is just a preview — you decide the final category for each item)
+
+【Method A】MoSCoW (Recommended)
+- [Item 1] → Must (Must do)
+- [Item 2] → Should (Should do)
+- [Item 3] → Could (Could do)
 ...
-特点：强制取舍，简单直观
+Feature: Forces trade-offs, simple and intuitive
 
-【分类方式 B】1-3-5 技术
-- [事项1] → 大任务
-- [事项2] → 中任务
-- [事项3] → 小任务
+【Method B】1-3-5 Rule
+- [Item 1] → Big task
+- [Item 2] → Medium task
+- [Item 3] → Small task
 ...
-特点：数量控制，每天 1 大 + 3 中 + 5 小
+Feature: Quantity control, 1 big + 3 medium + 5 small per day
 
-【分类方式 C】Eisenhower 矩阵
-- [事项1] → Q1 紧急且重要
-- [事项2] → Q2 不紧急但重要
+【Method C】Eisenhower Matrix
+- [Item 1] → Q1 Urgent & Important
+- [Item 2] → Q2 Not Urgent but Important
 ...
-特点：引入时间维度
+Feature: Introduces time dimension
 
-你选哪个？
+Which one do you prefer?
 ```
 
-**关键点**：
-- 明确告诉用户这只是展示，用户可以自己调整每个事项的分类
-- 给出推荐
-- 用户也可以自定义分类
+**Key points**:
+- Clarify this is just a preview; user can adjust each item's category
+- Provide recommendation
+- User can also customize categories
 
 ---
 
-### Step 3：日对齐/周对齐时间
+### Step 3: Daily/Weekly Sync Times
 
-**问题**：
+**Question**:
 ```
-每天的固定时间，我会找你回顾刚刚过去的一天、规划即将到来的一天，来帮你把精力花在主线任务上、并提醒你不要忘记临期的事项。
+At a fixed time each day, I'll check in with you to review the past day and plan the coming day, helping you focus on main tasks and reminding you of upcoming deadlines.
 
-每周的固定时间也是类似，做一周的回顾和规划。
+Same idea for weekly — a fixed time each week to review and plan.
 
-日对齐想在什么时间？
-- A. 早上 8:00（规划当天）
-- B. 晚上 21:00（规划第二天）
-- C. 我来说
+What time for daily sync?
+- A. 8:00 AM (plan the day)
+- B. 9:00 PM (plan tomorrow)
+- C. Let me specify
 
-周对齐想在什么时间？
-- A. 周日晚上
-- B. 周一早上
-- C. 我来说
+What time for weekly sync?
+- A. Sunday evening
+- B. Monday morning
+- C. Let me specify
 
-（如果实在不想安排某个对齐，告诉我就行）
+(If you really don't want a certain sync, just tell me)
 ```
 
-**关键点**：
-- 不问"需不需要"，默认需要
-- 弱化"可以不安排"选项（括号里提一下就行）
-- 确定时间后**不要立即创建定时任务**，等 Step 6 确认后一起创建
+**Key points**:
+- Don't ask "if needed" — default to yes
+- Downplay the "skip" option (mention in parentheses)
+- After confirming time, **don't create cron jobs yet** — wait until Step 6
 
 ---
 
-### Step 4：日历颜色设置
+### Step 4: Calendar Color Setup
 
-**说明**：
+**Explanation**:
 ```
-日对齐和周对齐完成后，我会把时间安排写入飞书日历，方便你查看。
+After daily and weekly sync, I'll write the schedule to your calendar for easy viewing.
 
-关于日历颜色，我根据你刚才说的事情，推荐按「领域」来分：
-```
-
-**问题**（基于用户事项推荐，以下为示例）：
-```
-- 工作 → 🔴 红色
-- 学业 → 🟣 紫色
-- 内容输出 → 🩵 青色
-- 运动 → 🟠 橙色
-- 琐事 → ⚫ 灰色
-
-这个颜色分类可以吗？需要怎么调整？
-（也可以按优先级来分颜色，或者不分颜色用飞书默认蓝色，或者不用飞书日历——告诉我一声就行）
+For calendar colors, based on what you mentioned earlier, I recommend categorizing by "domain":
 ```
 
-**关键点**：
-- 默认同步日历，不问"需不需要"
-- 颜色按**领域/项目**分类（工作、学业、内容、运动等），不是按优先级
-- 基于用户前面说的事项来推荐
-- 弱化其他选项，不作为显式选项
+**Question** (based on user's items, example below):
+```
+- Work → 🔴 Red
+- Study → 🟣 Purple
+- Content → 🩵 Cyan
+- Exercise → 🟠 Orange
+- Errands → ⚫ Gray
+
+Does this color scheme work? Any adjustments?
+(Can also categorize by priority, use default blue, or skip calendar entirely — just let me know)
+```
+
+**Key points**:
+- Default to calendar sync, don't ask "if needed"
+- Colors by **domain/project** (work, study, etc.), not by priority
+- Recommend based on user's earlier items
+- Downplay other options
 
 ---
 
-### Step 5：中长期目标
+### Step 5: Medium/Long-term Goals
 
-**问题**：
+**Question**:
 ```
-告诉我你的中长期目标。
+Tell me your medium and long-term goals.
 
-这是为了确保你在主线目标上花时间。周对齐时会检查是否偏离目标。
+This ensures you spend time on your main goals. Weekly sync will check if you're drifting.
 
-目标会出现在事项清单里，这样你就能知道你在做的事情是不是和目标有联系。
+Goals will appear in your task list, so you can see if what you're doing connects to your goals.
 
-如果没有特别明确的目标，可以随意说说你正在关注的事情和可能的长期目标，我会帮你提取。
+If you don't have clear goals yet, just mention what you're focusing on and possible long-term goals. I'll help extract them.
 
-说得很多或很少都没关系，之后可以随时调整。
+Say as much or as little as you want — can adjust anytime.
 
-你有哪些目标？其中哪些比较重要？（可以说「这个比较重要」来标记）
+What goals do you have? Which are more important? (say "this one's important" to mark)
 ```
 
-**处理**：
-- 用户可能说很多事情
-- 提取 2-4 个中长期目标
-- 用户说「比较重要」的目标标 `*`
-- 不再区分精进型/及格线
+**Processing**:
+- User might say many things
+- Extract 2-4 medium/long-term goals
+- Mark goals user says are "important" with `*`
+- Don't distinguish excel/pass types
 
 ---
 
-### Step 6：确认目标
+### Step 6: Confirm Goals
 
-**展示**：
+**Display**:
 ```
-我提取了以下目标（标 * 表示重点目标）：
+I extracted these goals (* marks important ones):
 
-1. *[目标1]
-2. *[目标2]
-3. [目标3]
+1. *[Goal 1]
+2. *[Goal 2]
+3. [Goal 3]
 
-这个目标你看对不对？如果不对可以直接修改。
-（目标随时可以在对话中更改，不用担心）
-
----
-确认后，我会：
-1. 创建日对齐和周对齐的定时任务
-2. 测试日历写入
-
-请稍等一下...
-```
-
-**确认后的操作**：
-
-1. **创建定时任务**（日对齐 + 周对齐）
-2. **测试日历写入**：
-   - 在 OpenClaw 日历上创建一个测试事件
-   - 给用户查看权限
-   - 告诉用户：在飞书日历左侧"我订阅的"里勾选 OpenClaw 日历即可看到
-3. **更新配置文件**
-
-**日历写入方式**：
-- 方式一（默认）：OpenClaw 在自己日历上创建，用户订阅 OpenClaw 日历
-- 如果写入失败，提示用户检查飞书权限配置
+Does this look right? Feel free to edit directly.
+(Goals can be changed anytime in conversation, don't worry)
 
 ---
 
-### Step 7：完成
+After confirmation, I'll:
+1. Create daily and weekly sync cron jobs
+2. Test calendar write
 
-**展示**：
+Please wait a moment...
 ```
-✅ 设置完成！
 
-- 分类方式：[用户选择的方式]
-- 日对齐：每天 xx:xx ✅ 定时任务已创建
-- 周对齐：每周x xx:xx ✅ 定时任务已创建
-- 日历：✅ 已测试写入成功
-  - 在飞书日历左侧「我订阅的」里勾选「OpenClaw」日历即可看到
-- 事项清单：[文档链接] ✅ 已给你管理权限
+**Post-confirmation actions**:
 
-💡 建议：把事项清单在对话框里置顶，方便随时查看修改
-（点击对话框上方的小加号 → 添加标签页 → 选择事项清单）
+1. **Create cron jobs** (daily + weekly sync)
+2. **Test calendar write**:
+   - Create a test event on OpenClaw calendar
+   - Grant user view permission
+   - Tell user: Check "OpenClaw" in Feishu calendar sidebar
+3. **Update config file**
 
-如果上面的内容有任何需要修改的地方，随时告诉我。
+**Calendar write method**:
+- Method 1 (default): OpenClaw creates on its calendar, user subscribes
+- If write fails, prompt user to check Feishu permissions
 
-当你有任何事情时，都可以直接告诉我，我会更新到事项清单里。
+---
+
+### Step 7: Complete
+
+**Display**:
+```
+✅ Setup complete!
+
+- Classification: [User's choice]
+- Daily sync: Every day at xx:xx ✅ Cron job created
+- Weekly sync: Every [day] at xx:xx ✅ Cron job created
+- Calendar: ✅ Test write successful
+  - Check "OpenClaw" in Feishu calendar sidebar
+- Task list: [Document link] ✅ Full access granted
+
+💡 Tip: Pin the task list in chat for easy access
+(Top of chat → Add tab → Select task list)
+
+Let me know if anything needs changing.
+
+Whenever you have something to add, just tell me — I'll update the task list.
 ```
 
 ---
 
-## 飞书文档创建
+## Document Creation
 
-在 Step 1 用户说完事项后，立即创建飞书文档：
+After Step 1, immediately create the document:
 
-### 操作步骤
+### Steps
 
 ```
-1. 调用 feishu-doc 的 create action
-2. 文档标题：「[用户名]的事项清单」
-3. 初始内容：根据用户说的事项，按默认分类结构填充
-4. 调用 feishu-perm 给用户 full_access 权限
-5. 返回文档链接给用户
+1. Call feishu-doc create action
+2. Document title: "[User's Name]'s Task List"
+3. Initial content: Fill with default classification structure based on user's items
+4. Call feishu-perm to grant user full_access
+5. Return document link to user
 ```
 
-### 失败处理
+### Failure Handling
 
-- 如果 feishu-doc 不可用 → 提示用户「无法创建飞书文档，请检查飞书 skill 配置」
-- 如果权限不足 → 提示用户「需要飞书应用有文档创建权限」
+- If feishu-doc unavailable → Prompt "Cannot create Feishu document, check feishu skill config"
+- If permissions insufficient → Prompt "Feishu app needs document creation permission"
 
 ---
 
-## 创建定时任务
+## Creating Cron Jobs
 
-在 Step 6 确认后，使用 OpenClaw cron 创建定时任务。
+After Step 6 confirmation, use OpenClaw cron to create jobs.
 
-### 重要说明
+### Important Notes
 
-定时任务的消息是发给 **OpenClaw** 的，不是直接发给用户的。OpenClaw 收到消息后，需要根据消息内容执行对齐流程并与用户交互。
+Cron messages are sent to **OpenClaw**, not directly to users. OpenClaw receives the message and needs to:
 
-因此消息内容需要：
-1. 告诉 OpenClaw 现在是什么对齐时间
-2. 指引 OpenClaw 按照对应的流程文档执行
-3. 直接让 OpenClaw 向用户发送开场消息（不要说"收到"之类的过渡语）
+1. Know which sync flow to execute
+2. Follow the corresponding flow document
+3. Send opening message directly to user (no "received" transition words)
 
-### 日对齐定时任务消息模板
+### Daily Sync Cron Template
 
 ```bash
 pnpm openclaw cron add \
-  --name "日对齐" \
+  --name "Daily Sync" \
   --cron "30 21 * * *" \
   --tz "Asia/Shanghai" \
-  --message "【日对齐提醒】
+  --message "[Daily Sync Reminder]
 
-现在到每日对齐时间了。
+It's time for daily sync.
 
-请执行 schedule-everyday skill 的日对齐流程。
+Please execute schedule-everyday skill's daily sync flow.
 
-⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
-2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
-3. 同时查看飞书日历，了解今天的固定安排
-4. 然后按照 schedule-everyday skill 的 references/daily-sync-flow.md 执行
+⚠️ Important:
+1. Read user config: ~/.openclaw/workspace/skills/schedule-everyday/config.yaml
+2. Read task list (Feishu doc token in config.storage.feishu_doc_token)
+3. Check Feishu calendar for today's fixed schedule
+4. Follow schedule-everyday skill's references/daily-sync-flow.md
 
-请直接向用户发送开场消息（不要说任何"收到"之类的话）：
+Send opening message directly (no transition words):
 
-开场消息要基于用户具体事项来问，不要问太开放的问题。
-例如：「简历写得怎么样？写出一版了吗？」或「今天主线想做什么？看你有论文要交、简历也在进行中。」" \
+Opening message should be specific to user's tasks, not too open-ended.
+Example: \"How's the resume going? Finished a draft?\" or \"What's the plan for today? I see you have a paper due Friday and resume in progress.\"" \
   --channel feishu \
   --to "ou_xxx" \
   --announce
 ```
 
-### 周对齐定时任务消息模板
+### Weekly Sync Cron Template
 
 ```bash
 pnpm openclaw cron add \
-  --name "周对齐" \
+  --name "Weekly Sync" \
   --cron "0 19 * * 0" \
   --tz "Asia/Shanghai" \
-  --message "【周对齐提醒】
+  --message "[Weekly Sync Reminder]
 
-现在到每周对齐时间了。
+It's time for weekly sync.
 
-请执行 schedule-everyday skill 的周对齐流程。
+Please execute schedule-everyday skill's weekly sync flow.
 
-⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
-2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
-3. 同时查看飞书日历，了解本周的固定安排
-4. 然后按照 schedule-everyday skill 的 references/weekly-sync-flow.md 执行
+⚠️ Important:
+1. Read user config: ~/.openclaw/workspace/skills/schedule-everyday/config.yaml
+2. Read task list (Feishu doc token in config.storage.feishu_doc_token)
+3. Check Feishu calendar for this week's fixed schedule
+4. Follow schedule-everyday skill's references/weekly-sync-flow.md
 
-请直接向用户发送开场消息（不要说任何"收到"之类的话）：
+Send opening message directly (no transition words):
 
-📅 周对齐时间到了。
+📅 Weekly sync time.
 
-先看中期目标 — 目前进展如何？
+Check medium-term goals — how's progress?
 
-[根据配置中的 goals 字段展示目标表格]" \
+[Display goals table from config.goals field]" \
   --channel feishu \
   --to "ou_xxx" \
   --announce
 ```
 
-### cron 表达式说明
-
-| 对齐类型 | 时间示例 | cron 表达式 |
-|----------|----------|-------------|
-| 日对齐 - 早上 8:00 | 每天 8:00 | `0 8 * * *` |
-| 日对齐 - 晚上 21:30 | 每天 21:30 | `30 21 * * *` |
-| 周对齐 - 周日晚上 | 周日 19:00 | `0 19 * * 0` |
-| 周对齐 - 周一早上 | 周一 8:00 | `0 8 * * 1` |
-
 ---
 
-## 配置保存
+## Config Save
 
-### 配置文件路径
+### Config File Path
 
-按优先级查找/保存配置：
-- **OpenClaw 环境**（推荐）：`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
-- **Claude Code 环境**（fallback）：`~/.schedule-everyday/config.yaml`
+Priority order for saving config:
+- **OpenClaw environment**: `~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
+- **Claude Code environment** (fallback): `~/.schedule-everyday/config.yaml`
 
-### 断点续传机制
+### Resume Mechanism
 
-在 Onboarding 过程中，每完成一个关键步骤后立即更新配置文件中的 `onboarding_status` 字段：
+Update `onboarding_status` after each key step:
 
 ```yaml
-onboarding_status: "pending_step3"  # 或 pending_step4 / pending_step5 / completed
+onboarding_status: "pending_step3"  # or pending_step4 / pending_step5 / completed
 ```
 
-### 完成后保存的配置
+### Final Config
 
 ```yaml
 version: "1.0"
@@ -363,83 +354,22 @@ weekly_sync:
 
 calendar:
   enabled: true
-  color_by: "domain"  # domain（领域）/ priority（优先级）/ none（不分）
+  color_by: "domain"  # domain / priority / none
   color_mapping:
-    "工作": -562844      # 红色
-    "学业": -7120138     # 紫色
-    "内容输出": -16722247 # 青色
-    "运动": -30720       # 橙色
-    "琐事": -6511959     # 灰色
+    "Work": -562844
+    "Study": -7120138
+    "Content": -16722247
+    "Exercise": -30720
+    "Errands": -6511959
 
 goals:
-  - name: "目标1"
+  - name: "Goal 1"
     important: true
-  - name: "目标2"
+  - name: "Goal 2"
     important: false
 
 storage:
   feishu_doc_token: "xxx"
-  feishu_calendar_id: "openclaw"  # 使用 OpenClaw 日历
+  feishu_calendar_id: "openclaw"
   local_path: "~/.openclaw/workspace/skills/schedule-everyday/tasks.md"
-```
-
----
-
-## 事项清单通用结构
-
-```markdown
-# 📋 [用户名]的事项清单
-
-> 最后更新：YYYY-MM-DD HH:MM
-
----
-
-## 📌 今日
-
-**主线**：（待日对齐确定）
-
-### 今日日程
-
-（待填充）
-
----
-
-## [根据分类模板填充结构]
-
----
-
-## 🎯 目标
-
-| 目标 | 进展 |
-|------|------|
-| *[重点目标1] | 刚开始 |
-| [目标2] | 刚开始 |
-
----
-
-## 已完成
-
-（完成后会记录在这里）
-
----
-
-## 归档
-
-（不再做的事项会移到这里）
-```
-
----
-
-## 重新设置
-
-如果用户说"重新设置"：
-
-```
-要重新设置吗？这会：
-- 重置偏好设置
-- 保留现有事项清单
-
-确认吗？
-- A. 确认，重新设置
-- B. 算了，保持现状
 ```

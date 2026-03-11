@@ -1,309 +1,309 @@
-# 分类模板详解
+# Classification Templates Explained
 
-本文档介绍 3 种事项分类模板及其在日对齐/周对齐中的应用。
-
----
-
-## 模板 A：MoSCoW（推荐）
-
-### 适用场景
-
-适合需要强制取舍的用户，特别是：
-- 容易把所有事都当成"重要"的用户
-- 需要明确的优先级判断
-- 希望简单直观的分类方式
-
-### 分类结构
-
-```
-事项
-├── Must（必须做）
-│   └── 不做会有严重后果
-│   └── 今天必须完成
-├── Should（应该做）
-│   └── 做了有好处
-│   └── 今天尽量完成
-├── Could（可以做）
-│   └── 有空就做
-│   └── 不做也没关系
-└── Won't（不做）
-    └── 暂时不做
-    └── 放入 Someday/Maybe
-```
-
-### 日对齐处理逻辑
-
-```
-1. 扫描 Must 分类，确认今天的 Must 事项
-2. 聚焦 Must 任务作为当日主线
-3. Must 完成后处理 Should，有余力再做 Could
-4. Won't 任务自动过滤
-
-提醒机制：
-- Must 任务超过 5 个 → "今天可能安排太多了"
-- 没有 Must 任务 → "今天没有主线任务吗？"
-```
-
-### 周对齐处理逻辑
-
-```
-事项池清理时：
-- 检查 Could/Won't 分类
-- 很久没动的 Could → 问用户还想做吗
-- Won't 可以定期清理
-```
-
-### 事项清单格式
-
-```markdown
-## Must（必须做）
-
-| 事项 | 截止时间 | 状态 | 备注 |
-|------|----------|------|------|
-| 论文初稿 | 今天 | 待做 |  |
-
-## Should（应该做）
-
-| 事项 | 状态 | 备注 |
-|------|------|------|
-| 准备面试 | 待做 | 本周 |
-
-## Could（可以做）
-
-| 事项 | 备注 |
-|------|------|
-| 整理书架 | 有空就做 |
-
-## Won't（暂不做）
-
-| 事项 | 备注 |
-|------|------|
-| 学习 Rust | 之后再考虑 |
-```
-
-### 颜色推荐
-
-| 分类 | 颜色 | 飞书 color 值 |
-|------|------|---------------|
-| Must | 红色 | -562844 |
-| Should | 橙色 | -30720 |
-| Could | 绿色 | -13318364 |
-| Won't | 灰色 | -6511959 |
+This document introduces 3 task classification templates and their application in daily/weekly syncs.
 
 ---
 
-## 模板 B：1-3-5 技术
+## Template A: MoSCoW (Recommended)
 
-### 适用场景
+### When to Use
 
-适合需要控制工作量的用户，特别是：
-- 容易过度规划的用户
-- 需要明确的每日任务数量限制
-- 希望自动进行时间预估
+Suitable for users who need to force trade-offs, especially:
+- Users who tend to treat everything as "important"
+- Need clear priority judgment
+- Want a simple and intuitive classification method
 
-### 分类结构
-
-```
-每天任务分配：
-├── 大任务 × 1（3-4 小时）
-│   └── 需要深度专注的工作
-│   └── 当天最重要的任务
-├── 中任务 × 3（1-2 小时）
-│   └── 需要一定时间的事项
-│   └── 可能有时间限制
-└── 小任务 × 5（<1 小时）
-    └── 快速完成的事项
-    └── 琐事、回复消息等
-
-总计约 8 小时
-```
-
-### 日对齐处理逻辑
+### Classification Structure
 
 ```
-1. 从事项池选择今天的 1+3+5 任务
-2. 先选大任务（当天最重要的一件事）
-3. 再选中任务（3 件）
-4. 最后选小任务（5 件）
-5. 数量硬约束，完成就赢了
-
-提醒机制：
-- 大任务超过 1 个 → "今天确定能完成这么多大任务吗？"
-- 总任务超过 9 个 → "今天可能安排太多了"
+Tasks
+├── Must (Must do)
+│   └── Serious consequences if not done
+│   └── Must complete today
+├── Should (Should do)
+│   └── Beneficial if done
+│   └── Try to complete today
+├── Could (Could do)
+│   └── Do if time permits
+│   └── Okay if not done
+└── Won't (Won't do)
+    └── Not doing for now
+    └── Put in Someday/Maybe
 ```
 
-### 周对齐处理逻辑
+### Daily Sync Processing Logic
 
 ```
-事项池清理时：
-- 检查事项池中很久没动的项
-- 大任务候选太多 → 帮用户拆分或排优先级
-- 小任务堆积 → 批量处理建议
+1. Scan Must category, confirm today's Must items
+2. Focus on Must tasks as the day's main focus
+3. After Must is complete, handle Should, do Could if energy remains
+4. Won't tasks are automatically filtered
+
+Reminder mechanism:
+- More than 5 Must tasks → "Today might be overloaded"
+- No Must tasks → "No main focus tasks today?"
 ```
 
-### 事项清单格式
+### Weekly Sync Processing Logic
+
+```
+Task pool cleanup:
+- Check Could/Won't categories
+- Could items untouched for a while → Ask user if still want to do
+- Won't can be periodically cleaned
+```
+
+### Task List Format
 
 ```markdown
-## 事项池
+## Must (Must do)
 
-### 大任务候选（3-4h）
+| Task | Deadline | Status | Notes |
+|------|----------|--------|-------|
+| Thesis draft | Today | Todo | |
 
-| 事项 | 状态 | 备注 |
-|------|------|------|
-| 完成产品方案 | 待做 | 需要深度专注 |
+## Should (Should do)
 
-### 中任务候选（1-2h）
+| Task | Status | Notes |
+|------|--------|-------|
+| Interview prep | Todo | This week |
 
-| 事项 | 状态 | 备注 |
-|------|------|------|
-| 写周报 | 待做 |  |
-| 面试准备 | 待做 |  |
+## Could (Could do)
 
-### 小任务候选（<1h）
+| Task | Notes |
+|------|-------|
+| Organize bookshelf | If time permits |
 
-| 事项 | 备注 |
-|------|------|
-| 回复邮件 |  |
-| 预约牙医 |  |
+## Won't (Not now)
 
-## 今日安排
+| Task | Notes |
+|------|-------|
+| Learn Rust | Consider later |
+```
 
-**大任务**：[事项]
+### Color Recommendations
 
-**中任务**：
-1. [事项]
-2. [事项]
-3. [事项]
+| Category | Color | Feishu color value |
+|----------|-------|-------------------|
+| Must | Red | -562844 |
+| Should | Orange | -30720 |
+| Could | Green | -13318364 |
+| Won't | Gray | -6511959 |
 
-**小任务**：
-1. [事项]
+---
+
+## Template B: 1-3-5 Technique
+
+### When to Use
+
+Suitable for users who need to control workload, especially:
+- Users who tend to over-plan
+- Need clear daily task quantity limits
+- Want automatic time estimation
+
+### Classification Structure
+
+```
+Daily task allocation:
+├── Big task × 1 (3-4 hours)
+│   └── Work requiring deep focus
+│   └── The day's most important task
+├── Medium task × 3 (1-2 hours)
+│   └── Items requiring some time
+│   └── May have time constraints
+└── Small task × 5 (<1 hour)
+    └── Quickly completed items
+    └── Chores, replying to messages, etc.
+
+Total approximately 8 hours
+```
+
+### Daily Sync Processing Logic
+
+```
+1. Select today's 1+3+5 tasks from task pool
+2. First select big task (the day's most important thing)
+3. Then select medium tasks (3 items)
+4. Finally select small tasks (5 items)
+5. Hard constraint on quantity, finishing means winning
+
+Reminder mechanism:
+- More than 1 big task → "Are you sure you can complete this many big tasks today?"
+- More than 9 total tasks → "Today might be overloaded"
+```
+
+### Weekly Sync Processing Logic
+
+```
+Task pool cleanup:
+- Check items in task pool that haven't moved in a while
+- Too many big task candidates → Help user break down or prioritize
+- Small task backlog → Suggest batch processing
+```
+
+### Task List Format
+
+```markdown
+## Task Pool
+
+### Big Task Candidates (3-4h)
+
+| Task | Status | Notes |
+|------|--------|-------|
+| Complete product proposal | Todo | Needs deep focus |
+
+### Medium Task Candidates (1-2h)
+
+| Task | Status | Notes |
+|------|--------|-------|
+| Write weekly report | Todo | |
+| Interview prep | Todo | |
+
+### Small Task Candidates (<1h)
+
+| Task | Notes |
+|------|-------|
+| Reply to emails | |
+| Book dentist appointment | |
+
+## Today's Plan
+
+**Big task**: [Task]
+
+**Medium tasks**:
+1. [Task]
+2. [Task]
+3. [Task]
+
+**Small tasks**:
+1. [Task]
 ...
 ```
 
-### 颜色推荐
+### Color Recommendations
 
-| 分类 | 颜色 | 飞书 color 值 |
-|------|------|---------------|
-| 大任务 | 红色 | -562844 |
-| 中任务 | 橙色 | -30720 |
-| 小任务 | 绿色 | -13318364 |
+| Category | Color | Feishu color value |
+|----------|-------|-------------------|
+| Big task | Red | -562844 |
+| Medium task | Orange | -30720 |
+| Small task | Green | -13318364 |
 
 ---
 
-## 模板 C：Eisenhower 矩阵
+## Template C: Eisenhower Matrix
 
-### 适用场景
+### When to Use
 
-适合需要引入时间维度的用户，特别是：
-- 容易被紧急事务淹没
-- 需要学会拒绝的用户
-- 希望培养长期视角
+Suitable for users who need to introduce a time dimension, especially:
+- Easily overwhelmed by urgent matters
+- Need to learn to say no
+- Want to develop a long-term perspective
 
-### 分类结构
-
-```
-事项
-├── Q1 紧急且重要（Do First）
-│   └── 立即处理
-│   └── 通常是危机、截止日期
-├── Q2 不紧急但重要（Schedule）
-│   └── 计划时间块
-│   └── 这是精进型目标所在
-│   └── 主线任务的主要来源
-├── Q3 紧急不重要（Delegate）
-│   └── 尽量授权或快速处理
-│   └── 警惕：不要让这类事占用太多时间
-└── Q4 不重要不紧急（Eliminate）
-    └── 考虑删除
-    └── 或放入 Someday/Maybe
-```
-
-### 日对齐处理逻辑
+### Classification Structure
 
 ```
-1. Q1（紧急且重要）：优先处理
-2. Q2（不紧急但重要）：主线任务候选，安排时间块
-3. Q3（紧急不重要）：检查是否被过度关注
-4. Q4（不重要不紧急）：建议删除或放入 someday
-
-长期培养：帮助用户把更多时间花在 Q2
+Tasks
+├── Q1 Urgent & Important (Do First)
+│   └── Handle immediately
+│   └── Usually crises, deadlines
+├── Q2 Not Urgent but Important (Schedule)
+│   └── Plan time blocks
+│   └── This is where improvement-focused goals live
+│   └── Main source of main focus tasks
+├── Q3 Urgent but Not Important (Delegate)
+│   └── Try to delegate or handle quickly
+│   └── Warning: Don't let these occupy too much time
+└── Q4 Not Important, Not Urgent (Eliminate)
+    └── Consider deleting
+    └── Or put in Someday/Maybe
 ```
 
-### 周对齐处理逻辑
+### Daily Sync Processing Logic
 
 ```
-事项池清理时：
-- 检查 Q3/Q4 分类
-- Q3 很多 → 帮用户识别哪些可以拒绝
-- Q4 可以定期清理
-- 检查 Q2 是否得到足够关注
+1. Q1 (Urgent & Important): Handle first
+2. Q2 (Not Urgent but Important): Main focus task candidates, schedule time blocks
+3. Q3 (Urgent but Not Important): Check if receiving too much attention
+4. Q4 (Not Important, Not Urgent): Suggest deleting or put in someday
+
+Long-term cultivation: Help user spend more time in Q2
 ```
 
-### 事项清单格式
+### Weekly Sync Processing Logic
+
+```
+Task pool cleanup:
+- Check Q3/Q4 categories
+- Lots of Q3 → Help user identify what can be declined
+- Q4 can be periodically cleaned
+- Check if Q2 is receiving enough attention
+```
+
+### Task List Format
 
 ```markdown
-## Q1 紧急且重要
+## Q1 Urgent & Important
 
-| 事项 | 截止时间 | 状态 |
-|------|----------|------|
-| 论文开题 | 今天 | 进行中 |
+| Task | Deadline | Status |
+|------|----------|--------|
+| Thesis proposal | Today | In progress |
 
-## Q2 不紧急但重要
+## Q2 Not Urgent but Important
 
-| 事项 | 建议时间 | 状态 |
-|------|----------|------|
-| 日程管理系统 | 每周 10 小时 | 进行中 |
+| Task | Suggested time | Status |
+|------|----------------|--------|
+| Schedule management system | 10 hours/week | In progress |
 
-## Q3 紧急不重要
+## Q3 Urgent but Not Important
 
-| 事项 | 截止时间 | 处理方式 |
-|------|----------|----------|
-| 劳动教育课 | 3.12 | 周三前完成 |
+| Task | Deadline | How to handle |
+|------|----------|---------------|
+| Labor education course | 3/12 | Complete by Wednesday |
 
 ## Q4 / Someday
 
-| 事项 | 备注 |
-|------|------|
-| 学习 Rust | 之后想学 |
+| Task | Notes |
+|------|-------|
+| Learn Rust | Want to learn later |
 ```
 
-### 颜色推荐
+### Color Recommendations
 
-| 分类 | 颜色 | 飞书 color 值 |
-|------|------|---------------|
-| Q1 紧急且重要 | 红色 | -562844 |
-| Q2 不紧急但重要 | 紫色 | -7120138 |
-| Q3 紧急不重要 | 橙色 | -30720 |
-| Q4 不重要不紧急 | 灰色 | -6511959 |
-
----
-
-## 分类模板选择建议
-
-| 如果你是... | 推荐模板 |
-|------------|----------|
-| 容易把所有事当"重要" | MoSCoW |
-| 容易过度规划 | 1-3-5 技术 |
-| 需要学会拒绝 | Eisenhower 矩阵 |
-| 有自己习惯的方式 | 自定义 |
+| Category | Color | Feishu color value |
+|----------|-------|-------------------|
+| Q1 Urgent & Important | Red | -562844 |
+| Q2 Not Urgent but Important | Purple | -7120138 |
+| Q3 Urgent but Not Important | Orange | -30720 |
+| Q4 Not Important, Not Urgent | Gray | -6511959 |
 
 ---
 
-## 飞书日历颜色对照表
+## Classification Template Selection Guide
 
-| 颜色 | 飞书 color 值 |
-|------|---------------|
-| 红色 | -562844 |
-| 橙色 | -30720 |
-| 绿色 | -13318364 |
-| 青色 | -16722247 |
-| 紫色 | -7120138 |
-| 灰色 | -6511959 |
-| 蓝色 | -14329888 |
-| 黄色 | -263804 |
-| 粉色 | -963671 |
-| 浅黄色 | -14838 |
-| 纯蓝色 | -1 |
-| 浅蓝色 | -15417089 |
-| 深蓝色 | -10392859 |
-| 紫红色 | -3066159 |
+| If you are... | Recommended template |
+|---------------|---------------------|
+| Treating everything as "important" | MoSCoW |
+| Tending to over-plan | 1-3-5 Technique |
+| Needing to learn to say no | Eisenhower Matrix |
+| Having your own preferred method | Custom |
+
+---
+
+## Feishu Calendar Color Reference
+
+| Color | Feishu color value |
+|-------|-------------------|
+| Red | -562844 |
+| Orange | -30720 |
+| Green | -13318364 |
+| Cyan | -16722247 |
+| Purple | -7120138 |
+| Gray | -6511959 |
+| Blue | -14329888 |
+| Yellow | -263804 |
+| Pink | -963671 |
+| Light yellow | -14838 |
+| Pure blue | -1 |
+| Light blue | -15417089 |
+| Dark blue | -10392859 |
+| Magenta | -3066159 |
