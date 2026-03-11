@@ -257,19 +257,21 @@ pnpm openclaw cron add \
 
 现在到每周对齐时间了。
 
-请直接向用户发送以下内容（不要说任何"收到"之类的话）：
+请执行 schedule-manager skill 的周对齐流程。
+
+⚠️ 重要：
+1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-manager/config.yaml
+2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
+3. 更新事项清单前必须先读取最新内容
+4. 然后按照本流程文档执行
+
+请直接向用户发送开场消息（不要说任何"收到"之类的话）：
 
 📅 周对齐时间到了。
 
 先看中期目标 — 目前进展如何？
 
-[展示用户的中长期目标表格]
-
-然后按照 schedule-manager skill 的 references/weekly-sync-flow.md 中的流程继续。
-
-请先读取用户的配置和事项清单：
-- 配置文件路径：[用户配置路径]
-- 事项清单：[飞书文档链接]" \
+[根据配置中的 goals 字段展示目标表格]" \
   --channel feishu \
   --to "ou_xxx" \
   --announce

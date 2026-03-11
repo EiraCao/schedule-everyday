@@ -3,6 +3,9 @@
 version: "1.0"
 created_at: "YYYY-MM-DD"
 
+# Onboarding 状态（断点续传）
+onboarding_status: "completed"  # pending_step3 / pending_step4 / pending_step5 / completed
+
 # 分类方式: moscow / 1-3-5 / eisenhower
 classification: "moscow"
 
@@ -37,5 +40,5 @@ storage:
   feishu_doc_token: null      # 事项清单文档 token
   feishu_calendar_id: null    # 日历 ID
 
-  # 备选：本地文件
-  local_path: "~/.schedule-manager/tasks.md"
+  # 备选：本地文件（OpenClaw 环境用 workspace 下的路径）
+  local_path: "~/.openclaw/workspace/skills/schedule-manager/tasks.md"

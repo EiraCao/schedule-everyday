@@ -71,13 +71,16 @@ description: |
 每次触发时，首先检查配置文件是否存在：
 
 ```bash
-# 配置文件路径（飞书或本地）
+# 配置文件路径（按优先级查找）
+# OpenClaw 环境：
+~/.openclaw/workspace/skills/schedule-manager/config.yaml
+# Claude Code 环境（fallback）：
 ~/.schedule-manager/config.yaml
 ```
 
-如果不存在，执行 **Onboarding 流程**（见 references/onboarding-flow.md）。
-
-如果存在，读取配置，根据触发类型执行对应流程。
+- 如果配置文件**不存在**，执行 **Onboarding 流程**（见 references/onboarding-flow.md）。
+- 如果配置文件存在但 `onboarding_status` 不是 `completed`，从断点继续 Onboarding。
+- 如果配置文件存在且 `onboarding_status: completed`，读取配置，根据触发类型执行对应流程。
 
 ---
 
@@ -146,11 +149,12 @@ description: |
 
 ## 配置文件
 
-路径：`~/.schedule-manager/config.yaml` 或飞书文档
+路径：`~/.openclaw/workspace/skills/schedule-manager/config.yaml`（OpenClaw 环境）或 `~/.schedule-manager/config.yaml`（Claude Code 环境）
 
 ```yaml
 version: "1.0"
 created_at: "YYYY-MM-DD"
+onboarding_status: "completed"  # pending_step3 / pending_step4 / pending_step5 / completed
 
 classification: "moscow"  # moscow / 1-3-5 / eisenhower
 
@@ -176,7 +180,7 @@ goals:
 storage:
   feishu_doc_token: "xxx"
   feishu_calendar_id: "xxx"
-  local_path: "~/.schedule-manager/tasks.md"
+  local_path: "~/.openclaw/workspace/skills/schedule-manager/tasks.md"
 ```
 
 ---
@@ -185,7 +189,7 @@ storage:
 
 **重要**：更新事项清单时，必须遵循以下步骤：
 
-1. **先读取**：使用 Read 工具读取最新内容
+1. **⚠️ 先读取**：使用 Read 工具（或 feishu-doc 的 read action）读取最新内容。**每次更新前都必须执行此步骤，无例外。**
 2. **理解变更**：分析需要更新的部分
 3. **使用 Edit**：使用 Edit 工具进行局部更新，不要覆盖整个文件
 4. **保留结构**：保持原有的分类结构和格式
