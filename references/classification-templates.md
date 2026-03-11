@@ -1,6 +1,6 @@
 # Classification Templates Explained
 
-This document introduces 3 task classification templates and their application in daily/weekly syncs.
+This document introduces 4 task classification templates and their application in daily/weekly syncs.
 
 ---
 
@@ -275,6 +275,70 @@ Task pool cleanup:
 | Q2 Not Urgent but Important | Purple | -7120138 |
 | Q3 Urgent but Not Important | Orange | -30720 |
 | Q4 Not Important, Not Urgent | Gray | -6511959 |
+
+---
+
+## Template D: MoSCoW + Exploration
+
+### When to Use
+
+Suitable for users who want to protect creative ideas without pressure, especially:
+- Users with many "someday" ideas that don't fit into priorities
+- Users who feel overwhelmed by long to-do lists
+- Users who want to separate "must deliver" from "exploratory"
+
+### Classification Structure
+
+```
+Tasks
+├── Must (Must do)
+│   └── Serious consequences if not done
+├── Should (Should do)
+│   └── Beneficial if done
+├── Could (Could do)
+│   └── Do if time permits
+└── Someday / Exploration
+    └── No commitment to output
+    └── Creative ideas, learning interests
+    └── Can be moved to other categories anytime
+```
+
+### Key Feature
+
+**Exploration items have no commitment to output**. This protects creative ideas without the pressure of a long to-do list. When you commit to producing something, they can be moved to other categories at any priority level.
+
+### Task List Format
+
+```markdown
+## Must (Must do)
+
+| Task | Deadline | Status | Notes |
+|------|----------|--------|-------|
+| Thesis draft | Today | Todo | |
+
+## Should (Should do)
+
+| Task | Status | Notes |
+|------|--------|-------|
+| Interview prep | Todo | |
+
+## Could (Could do)
+
+| Task | Notes |
+|------|-------|
+| Organize bookshelf | |
+
+## Someday / Exploration
+
+| Task | Notes |
+|------|-------|
+| Learn Rust | When time permits |
+| Start a podcast | Interesting idea |
+```
+
+### Color Recommendations
+
+Same as MoSCoW, with Exploration using Gray or Cyan.
 
 ---
 

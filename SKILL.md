@@ -127,13 +127,14 @@ This is a schedule management solution for OpenClaw + Feishu, only supports Open
 
 ## Classification Methods
 
-Supports 3 classification styles (see references/classification-templates.md for details):
+Supports 4 classification styles (see references/classification-templates.md for details):
 
 | Method | Key Feature | Best For |
 |--------|-------------|----------|
 | **MoSCoW** (Recommended) | Forces prioritization, 4 simple tiers | Users who treat everything as "important" |
 | **1-3-5 Rule** | Quantity control, 1+3+5 tasks per day | Users who tend to over-plan |
 | **Eisenhower Matrix** | Time dimension, 4 quadrants | Users who need to learn to say no |
+| **MoSCoW + Exploration** | Adds "no commitment" category | Users who want to protect creative ideas |
 
 ### Daily Sync Classification Handling
 

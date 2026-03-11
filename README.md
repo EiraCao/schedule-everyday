@@ -20,13 +20,14 @@ A skill designed to **reduce cognitive load** — Schedule Everyday handles the 
 
 ## Classification Methods
 
-Supports 3 classification styles:
+Supports 4 classification styles:
 
 | Method | Key Feature | Best For |
 |--------|-------------|----------|
 | **MoSCoW** (Recommended) | Forces prioritization, 4 simple tiers | Users who treat everything as "important" |
 | **1-3-5 Rule** | Quantity control, 1+3+5 tasks per day | Users who tend to over-plan |
 | **Eisenhower Matrix** | Time dimension, 4 quadrants | Users who need to learn to say no |
+| **MoSCoW + Exploration** | Adds "no commitment" category | Users who want to protect creative ideas |
 
 ## Installation
 
