@@ -1,4 +1,4 @@
-# schedule-manager 配置模板
+# schedule-everyday 配置模板
 
 version: "1.0"
 created_at: "YYYY-MM-DD"
@@ -41,4 +41,4 @@ storage:
   feishu_calendar_id: null    # 日历 ID
 
   # 备选：本地文件（OpenClaw 环境用 workspace 下的路径）
-  local_path: "~/.openclaw/workspace/skills/schedule-manager/tasks.md"
+  local_path: "~/.openclaw/workspace/skills/schedule-everyday/tasks.md"

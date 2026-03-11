@@ -20,7 +20,7 @@
 ## 流程开始前的准备
 
 **⚠️ 必须先读取**：
-1. 读取用户配置：`~/.openclaw/workspace/skills/schedule-manager/config.yaml`
+1. 读取用户配置：`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
 2. 读取事项清单（飞书文档 token 在配置的 `storage.feishu_doc_token`）
 3. **同时查看飞书日历**，了解今天的固定安排
 
@@ -275,10 +275,10 @@ pnpm openclaw cron add \
 
 现在到每日对齐时间了。
 
-请执行 schedule-manager skill 的日对齐流程。
+请执行 schedule-everyday skill 的日对齐流程。
 
 ⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-manager/config.yaml
+1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
 2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
 3. 同时查看飞书日历，了解今天的固定安排
 4. 更新事项清单前必须先读取最新内容

@@ -73,9 +73,9 @@ description: |
 ```bash
 # 配置文件路径（按优先级查找）
 # OpenClaw 环境：
-~/.openclaw/workspace/skills/schedule-manager/config.yaml
+~/.openclaw/workspace/skills/schedule-everyday/config.yaml
 # Claude Code 环境（fallback）：
-~/.schedule-manager/config.yaml
+~/.schedule-everyday/config.yaml
 ```
 
 - 如果配置文件**不存在**，执行 **Onboarding 流程**（见 references/onboarding-flow.md）。
@@ -149,7 +149,7 @@ description: |
 
 ## 配置文件
 
-路径：`~/.openclaw/workspace/skills/schedule-manager/config.yaml`（OpenClaw 环境）或 `~/.schedule-manager/config.yaml`（Claude Code 环境）
+路径：`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`（OpenClaw 环境）或 `~/.schedule-everyday/config.yaml`（Claude Code 环境）
 
 ```yaml
 version: "1.0"
@@ -180,7 +180,7 @@ goals:
 storage:
   feishu_doc_token: "xxx"
   feishu_calendar_id: "xxx"
-  local_path: "~/.openclaw/workspace/skills/schedule-manager/tasks.md"
+  local_path: "~/.openclaw/workspace/skills/schedule-everyday/tasks.md"
 ```
 
 ---

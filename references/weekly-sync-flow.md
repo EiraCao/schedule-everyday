@@ -257,10 +257,10 @@ pnpm openclaw cron add \
 
 现在到每周对齐时间了。
 
-请执行 schedule-manager skill 的周对齐流程。
+请执行 schedule-everyday skill 的周对齐流程。
 
 ⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-manager/config.yaml
+1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
 2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
 3. 更新事项清单前必须先读取最新内容
 4. 然后按照本流程文档执行

@@ -268,13 +268,13 @@ pnpm openclaw cron add \
 
 现在到每日对齐时间了。
 
-请执行 schedule-manager skill 的日对齐流程。
+请执行 schedule-everyday skill 的日对齐流程。
 
 ⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-manager/config.yaml
+1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
 2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
 3. 同时查看飞书日历，了解今天的固定安排
-4. 然后按照 schedule-manager skill 的 references/daily-sync-flow.md 执行
+4. 然后按照 schedule-everyday skill 的 references/daily-sync-flow.md 执行
 
 请直接向用户发送开场消息（不要说任何"收到"之类的话）：
 
@@ -296,13 +296,13 @@ pnpm openclaw cron add \
 
 现在到每周对齐时间了。
 
-请执行 schedule-manager skill 的周对齐流程。
+请执行 schedule-everyday skill 的周对齐流程。
 
 ⚠️ 重要：
-1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-manager/config.yaml
+1. 先读取用户配置：~/.openclaw/workspace/skills/schedule-everyday/config.yaml
 2. 再读取事项清单（飞书文档 token 在配置的 storage.feishu_doc_token）
 3. 同时查看飞书日历，了解本周的固定安排
-4. 然后按照 schedule-manager skill 的 references/weekly-sync-flow.md 执行
+4. 然后按照 schedule-everyday skill 的 references/weekly-sync-flow.md 执行
 
 请直接向用户发送开场消息（不要说任何"收到"之类的话）：
 
@@ -332,8 +332,8 @@ pnpm openclaw cron add \
 ### 配置文件路径
 
 按优先级查找/保存配置：
-- **OpenClaw 环境**（推荐）：`~/.openclaw/workspace/skills/schedule-manager/config.yaml`
-- **Claude Code 环境**（fallback）：`~/.schedule-manager/config.yaml`
+- **OpenClaw 环境**（推荐）：`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
+- **Claude Code 环境**（fallback）：`~/.schedule-everyday/config.yaml`
 
 ### 断点续传机制
 
@@ -380,7 +380,7 @@ goals:
 storage:
   feishu_doc_token: "xxx"
   feishu_calendar_id: "openclaw"  # 使用 OpenClaw 日历
-  local_path: "~/.openclaw/workspace/skills/schedule-manager/tasks.md"
+  local_path: "~/.openclaw/workspace/skills/schedule-everyday/tasks.md"
 ```
 
 ---
