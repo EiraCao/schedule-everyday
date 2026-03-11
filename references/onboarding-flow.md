@@ -160,7 +160,6 @@ What goals do you have? Which are more important? (say "this one's important" to
 - User might say many things
 - Extract 2-4 medium/long-term goals
 - Mark goals user says are "important" with `*`
-- Don't distinguish excel/pass types
 
 ---
 
@@ -186,14 +185,12 @@ After confirmation, I'll:
 Please wait a moment...
 ```
 
-**Post-confirmation actions**:
+### **Post-Step6 Confirmation Actions**: (see following sections for details)
 
-1. **Create cron jobs** (daily + weekly sync)
-2. **Test calendar write**:
-   - Create a test event on OpenClaw calendar
-   - Grant user view permission
-   - Tell user: Check "OpenClaw" in Feishu calendar sidebar
-3. **Update config file**
+1. **Test calendar write**
+2. **Create Feishu document**
+3. **Create cron jobs** (daily + weekly sync)
+4. **Update config file**
 
 **Calendar write methods**:
 
@@ -236,6 +233,27 @@ Whenever you have something to add, just tell me — I'll update the task list.
 
 ---
 
+## Test Feishu Calendar Write
+- Create a test event on OpenClaw calendar
+- Grant user **edit permission** (not just view permission) for OpenClaw calendar
+- Tell user: Check "OpenClaw" in Feishu calendar sidebar under "Subscribed Calendars". On mobile, tap the calendar icon in the top right corner of the calendar view.
+
+**Calendar write methods**:
+
+**Method 1 (Recommended)**: OpenClaw creates events on its own calendar, user subscribes
+- Grant user edit permission (not just view permission)
+- User subscribes to OpenClaw calendar in Feishu sidebar
+
+**Method 2**: Write directly to user's calendar (requires authorization)
+- Requires user to pre-authorize OpenClaw to access their calendar
+- More complex configuration, generally not recommended
+
+**Failure handling**:
+- If calendar write fails → Tell user "Calendar write failed, please check Feishu app calendar permission configuration"
+- Continue with other flows, don't block entire onboarding due to calendar failure
+
+---
+
 ## Document Creation
 
 After Step 1, immediately create the document:
@@ -245,7 +263,7 @@ After Step 1, immediately create the document:
 ```
 1. Call feishu-doc create action (only creates empty document)
 2. After getting doc_token, call append or write action to write content
-3. After content written, call feishu-perm to grant user full_access
+3. After content written successfully, call feishu-perm to grant user full_access
 4. Return document link to user
 ```
 
