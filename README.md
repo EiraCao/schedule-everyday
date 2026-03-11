@@ -1,5 +1,7 @@
 # Schedule Everyday
 
+English | [简体中文](https://github.com/EiraCao/schedule-everyday)
+
 A skill designed to **reduce cognitive load** — Schedule Everyday handles the thinking and organizing like a personal secretary. Users just need to "decide".
 
 ## Features
