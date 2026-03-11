@@ -70,12 +70,11 @@ Use sparingly: ✅ Complete ⚠️ Reminder/Deadline 🌙 Daily Sync 📅 Weekly
 On each trigger, first check if config file exists:
 
 ```bash
-# Config file path (priority order)
-# OpenClaw environment:
+# Config file path (OpenClaw environment)
 ~/.openclaw/workspace/skills/schedule-everyday/config.yaml
-# Claude Code environment (fallback):
-~/.schedule-everyday/config.yaml
 ```
+
+This is a schedule management solution for OpenClaw + Feishu, only supports OpenClaw environment.
 
 - If config file **doesn't exist**, execute **Onboarding Flow** (see references/onboarding-flow.md).
 - If config file exists but `onboarding_status` isn't `completed`, resume Onboarding from checkpoint.
@@ -148,7 +147,7 @@ Supports 3 classification styles (see references/classification-templates.md for
 
 ## Config File
 
-Path: `~/.openclaw/workspace/skills/schedule-everyday/config.yaml` (OpenClaw) or `~/.schedule-everyday/config.yaml` (Claude Code)
+Path: `~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
 
 ```yaml
 version: "1.0"
@@ -196,6 +195,34 @@ storage:
 **Forbidden**:
 - Directly using Write to overwrite entire file
 - Writing without reading first
+
+---
+
+## Feishu Operation Failure Handling
+
+During execution, if Feishu operations fail, handle as follows:
+
+### Document Operation Failures
+
+| Situation | Handling Method |
+|-----------|-----------------|
+| Cannot read document | Tell user "Cannot read task list, please check Feishu configuration" |
+| Cannot write document | Tell user "Cannot update task list, please check network and permissions" |
+| Table operation failed | Try recording in text format, tell user "Table update failed, recorded as text" |
+
+### Calendar Operation Failures
+
+| Situation | Handling Method |
+|-----------|-----------------|
+| Cannot write to calendar | Tell user "Calendar write failed", continue with task list operations |
+| User cannot see calendar | Guide user: Feishu calendar sidebar → Subscribed Calendars → Check OpenClaw calendar |
+| Permission issues | Tell user "Please check if you have edit permission for OpenClaw calendar" |
+
+### General Principles
+
+1. **Don't block main flow**: Even if Feishu operations fail, continue with other operations
+2. **Clearly inform user**: Tell user what failed, why, and how to handle
+3. **Provide fallback**: If cannot write to Feishu document, can record in text format first
 
 ---
 

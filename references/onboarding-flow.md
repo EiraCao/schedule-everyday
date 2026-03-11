@@ -195,9 +195,21 @@ Please wait a moment...
    - Tell user: Check "OpenClaw" in Feishu calendar sidebar
 3. **Update config file**
 
-**Calendar write method**:
-- Method 1 (default): OpenClaw creates on its calendar, user subscribes
-- If write fails, prompt user to check Feishu permissions
+**Calendar write methods**:
+
+**Method 1 (Default)**: OpenClaw creates events on its own calendar, user subscribes
+1. Create test event on OpenClaw calendar
+2. Grant user **edit permission** (not just view permission)
+3. Tell user: Check "OpenClaw" in Feishu calendar sidebar under "Subscribed Calendars"
+4. User can now view and edit these events
+
+**Method 2**: Write directly to user's calendar (requires authorization)
+- Requires user to pre-authorize OpenClaw to access their calendar
+- More complex configuration, generally not recommended
+
+**Failure handling**:
+- If calendar write fails → Tell user "Calendar write failed, please check Feishu app calendar permission configuration"
+- Continue with other flows, don't block entire onboarding due to calendar failure
 
 ---
 
@@ -231,17 +243,21 @@ After Step 1, immediately create the document:
 ### Steps
 
 ```
-1. Call feishu-doc create action
-2. Document title: "[User's Name]'s Task List"
-3. Initial content: Fill with default classification structure based on user's items
-4. Call feishu-perm to grant user full_access
-5. Return document link to user
+1. Call feishu-doc create action (only creates empty document)
+2. After getting doc_token, call append or write action to write content
+3. After content written, call feishu-perm to grant user full_access
+4. Return document link to user
 ```
+
+Note: For table operations, use `write_table_cells` to rewrite entire table content (add/delete rows not available).
 
 ### Failure Handling
 
-- If feishu-doc unavailable → Prompt "Cannot create Feishu document, check feishu skill config"
-- If permissions insufficient → Prompt "Feishu app needs document creation permission"
+| Situation | Action |
+|-----------|--------|
+| feishu-doc unavailable | Tell user "Cannot create document, check feishu skill config" |
+| Content write failed | Tell user "Document created but content write failed, please edit manually" |
+| Permission setting failed | Tell user "Document created, please manually request edit permission" |
 
 ---
 
@@ -322,9 +338,7 @@ Check medium-term goals — how's progress?
 
 ### Config File Path
 
-Priority order for saving config:
-- **OpenClaw environment**: `~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
-- **Claude Code environment** (fallback): `~/.schedule-everyday/config.yaml`
+`~/.openclaw/workspace/skills/schedule-everyday/config.yaml`
 
 ### Resume Mechanism
 

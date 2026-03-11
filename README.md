@@ -30,17 +30,10 @@ Supports 3 classification styles:
 
 ## Installation
 
-### OpenClaw
+This solution is designed for **OpenClaw + Feishu** environment.
 
 ```bash
 cd ~/.openclaw/workspace/skills/
-git clone -b en https://github.com/EiraCao/schedule-everyday.git
-```
-
-### Claude Code
-
-```bash
-cd ~/.claude/skills/
 git clone -b en https://github.com/EiraCao/schedule-everyday.git
 ```
 

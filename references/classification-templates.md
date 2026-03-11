@@ -289,6 +289,62 @@ Task pool cleanup:
 
 ---
 
+## Why These Classification Methods Are Recommended
+
+### MoSCoW Method (First Recommendation)
+
+**Core Advantages**:
+- Most simple and intuitive: M/S/C is easy to understand at a glance
+- Forces trade-offs: Avoids the trap of "all tasks are high priority"
+- Daily sync friendly: Quickly mark each day, focus on M tasks
+
+**Best For**:
+- Users who need forced trade-off decisions (tend to treat everything as "important")
+- Moderate task volume, 5-15 to-do items per day
+- Users easily overwhelmed by trivia, need to focus on main thread
+
+**Example Application**:
+User says: "I need to write a paper, learn English, help a friend revise their resume, and there are some small things"
+
+MoSCoW classification:
+- M: Write paper (draft due tomorrow, must complete today)
+- S: Learn English (daily habit, important but can reduce time today)
+- S: Help friend revise resume (promised by Friday)
+- C: Some small things (organize desk, reply to non-urgent emails)
+
+### 1-3-5 Technique (Second Recommendation)
+
+**Core Advantages**:
+- Quantity control: Forces "9 tasks", avoiding over-planning
+- Time awareness: Automatically provides time estimation (3h+4.5h+2.5h≈8h)
+- Easy to execute: Just these 9 per day, completing means winning
+
+**Best For**:
+- Users who tend to over-plan, list 20+ to-dos daily but can't finish
+- Users needing time perception training (inaccurate task duration estimation)
+
+### Eisenhower Matrix (Third Recommendation)
+
+**Core Advantages**:
+- Introduces time dimension: "Urgency" is a dimension other methods don't have
+- Long-term perspective cultivation: Emphasizes value of Q2 (not urgent but important)
+- Rejection training: Helps users identify Q3/Q4 and learn to say no
+
+**Best For**:
+- Users easily led around by "urgent" matters
+- Users needing to cultivate long-term perspective
+- Users with many work interruptions, needing to learn refusal
+
+### How to Choose
+
+| If you are... | Recommended template |
+|---------------|---------------------|
+| Treating everything as "important" | MoSCoW |
+| Tending to over-plan | 1-3-5 Rule |
+| Needing to learn to say no | Eisenhower Matrix |
+
+---
+
 ## Feishu Calendar Color Reference
 
 | Color | Feishu color value |
