@@ -1,61 +1,45 @@
 # Schedule Everyday
 
-[English (en branch)](https://github.com/EiraCao/schedule-everyday/tree/en) | 简体中文
+简体中文 | [English](https://github.com/EiraCao/schedule-everyday/tree/en)
 
-一个「数字秘书」skill，核心目标是**减少认知负担**。用户只需「拍板」，思考和整理由秘书完成。
+> "忙了一天，但好像什么都没做完？""总觉得有件事忘了，但想不起来是什么？"
+
+这是一个「数字秘书」skill，核心目标是**减少认知负担**。
+- **① 长期维护一个飞书内的事项清单文档**，随时记录整理你的任何事项或灵感；
+- **② 每天和每周主动找你对齐**，帮你把精力放到主线目标上，对临期事项设置定时提醒、自动同步飞书日历。
+建议使用 OpenClaw + 飞书，如果用 Claude Code 需要想办法连接飞书，否则看不到自己的全部事项清单文档。
 
 ## 功能
+- **Onboarding** — 5 分钟完成初始化，按照你的偏好自由选择事项分类方式、每日对齐/每周对齐的时间、日历颜色方案等。
+- **日对齐** — — 每天固定时间（如早上 8:30 或晚上 21:30）主动扫描日历和事项清单，向你确认主线任务、提醒临期事项、并同步飞书日历。
+- **周对齐** — 每周日/一回顾上周完成度，帮助你把精力放在实现中长期目标的事项上，规划主线任务、确保给重要事项预留了事件、排入固定习惯（运动、阅读等）。
+- **事项管理** — 添加/更新/归档事项。“把球打出去”，任何突然的ddl、班群的提醒、主任的要求，或者自己的灵感，随时丢给，就会自动记录到；支持升级/降级优先级、归档已完成事项。
 
-- **Onboarding** — 引导设置分类方式、日历配置、中长期目标
-- **日对齐** — 确定主线任务、扫描临期事项、确认日程
-- **周对齐** — 目标回顾、上周回顾、本周主线、习惯排期
-- **事项管理** — 添加/更新/归档事项
-
-## 触发词
-
-- 日对齐：「对齐一下」「今天安排」「日对齐」「daily sync」
-- 周对齐：「周对齐」「weekly sync」「这周安排」
-- 事项管理：「添加事项」「记录一个事情」「看看我的清单」
-- 设置：「设置日程偏好」「初始化日程」
-
-## 分类方式
+## 不同的优先级分类方式
 
 支持 3 种分类：
 
-| 方式 | 特点 | 适合 |
-|------|------|------|
-| **MoSCoW**（推荐） | 强制取舍，4 档简单直观 | 容易把所有事当「重要」的用户 |
-| **1-3-5 技术** | 数量控制，每天 1+3+5 | 容易过度规划的用户 |
-| **Eisenhower 矩阵** | 引入时间维度，四象限 | 需要学会拒绝的用户 |
+| 方式 | 适合这样的你 | 核心感觉 |
+|------|------------|----------|
+| **MoSCoW** | 容易把所有事都当"重要" | 强制取舍：Must 不做会死，Should 做了更好，Could 有空再说 |
+| **1-3-5 技术** | 容易列 20 条待办然后崩溃 | 数量硬约束：每天 1 个大石头 + 3 个中任务 + 5 个小琐事，完成就赢了 |
+| **Eisenhower 矩阵** | 总被别人的急事打断 | 区分"紧急"和"重要"：帮你把更多时间花在真正重要的事上（Q2） |
+也可以自由选择任务的优先级划分方式。
 
 ## 安装
 
-### OpenClaw（中文版）
+### OpenClaw
 
 ```bash
 cd ~/.openclaw/workspace/skills/
 git clone https://github.com/EiraCao/schedule-everyday.git
 ```
 
-### OpenClaw（English version）
-
-```bash
-cd ~/.openclaw/workspace/skills/
-git clone -b en https://github.com/EiraCao/schedule-everyday.git
-```
-
-### Claude Code（中文版）
+### Claude Code
 
 ```bash
 cd ~/.claude/skills/
 git clone https://github.com/EiraCao/schedule-everyday.git
-```
-
-### Claude Code（English version）
-
-```bash
-cd ~/.claude/skills/
-git clone -b en https://github.com/EiraCao/schedule-everyday.git
 ```
 
 ## 文件结构
@@ -72,12 +56,6 @@ schedule-everyday/
 └── assets/
     └── config_template.yaml      # 配置模板
 ```
-
-## 核心原则
-
-1. **小问题 + 给选项** — 每次只问一个问题，提供 2-4 个选项
-2. **非评判语气** — 关心支持，不给压力，不说「你应该」
-3. **先读再写** — 更新事项清单前，必须先读取最新内容
 
 ## License
 
