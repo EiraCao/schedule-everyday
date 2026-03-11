@@ -1,5 +1,7 @@
 # Schedule Everyday
 
+[English](./README.en.md) | 简体中文
+
 一个「数字秘书」skill，核心目标是**减少认知负担**。用户只需「拍板」，思考和整理由秘书完成。
 
 ## 功能
@@ -47,12 +49,18 @@ git clone https://github.com/EiraCao/schedule-everyday.git
 ```
 schedule-everyday/
 ├── SKILL.md                      # Skill 主文件
-├── README.md                     # 本文件
+├── README.md                     # 中文文档（本文件）
+├── README.en.md                  # English documentation
 ├── references/
 │   ├── onboarding-flow.md        # Onboarding 流程
 │   ├── daily-sync-flow.md        # 日对齐流程
 │   ├── weekly-sync-flow.md       # 周对齐流程
-│   └── classification-templates.md # 分类模板
+│   ├── classification-templates.md # 分类模板
+│   └── en/                       # English flow docs
+│       ├── onboarding-flow.md
+│       ├── daily-sync-flow.md
+│       ├── weekly-sync-flow.md
+│       └── classification-templates.md
 └── assets/
     └── config_template.yaml      # 配置模板
 ```

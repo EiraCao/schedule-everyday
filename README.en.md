@@ -1,6 +1,8 @@
 # Schedule Everyday
 
-A skill designed to **reduce cognitive load**. Users just need to "decide" — Schedule Everyday handles the thinking and organizing.
+English | [简体中文](./README.md)
+
+A skill designed to **reduce cognitive load**. Users just need to "decide" — Schedule Everyday handles the thinking and organizing like a personal secretary.
 
 ## Features
 
@@ -48,12 +50,17 @@ git clone https://github.com/EiraCao/schedule-everyday.git
 schedule-everyday/
 ├── SKILL.md                      # Main skill file
 ├── README.md                     # Chinese documentation
-├── README.en.md                  # English documentation
+├── README.en.md                  # English documentation (this file)
 ├── references/
-│   ├── onboarding-flow.md        # Onboarding flow
-│   ├── daily-sync-flow.md        # Daily sync flow
-│   ├── weekly-sync-flow.md       # Weekly sync flow
-│   └── classification-templates.md # Classification templates
+│   ├── onboarding-flow.md        # Onboarding flow (Chinese)
+│   ├── daily-sync-flow.md        # Daily sync flow (Chinese)
+│   ├── weekly-sync-flow.md       # Weekly sync flow (Chinese)
+│   └── classification-templates.md
+│   └── en/                       # English flow docs
+│       ├── onboarding-flow.md
+│       ├── daily-sync-flow.md
+│       ├── weekly-sync-flow.md
+│       └── classification-templates.md
 └── assets/
     └── config_template.yaml      # Config template
 ```
