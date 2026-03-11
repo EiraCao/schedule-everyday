@@ -1,6 +1,6 @@
 # Schedule Everyday
 
-[English](./README.en.md) | 简体中文
+[English (en branch)](https://github.com/EiraCao/schedule-everyday/tree/en) | 简体中文
 
 一个「数字秘书」skill，核心目标是**减少认知负担**。用户只需「拍板」，思考和整理由秘书完成。
 
@@ -30,18 +30,32 @@
 
 ## 安装
 
-### OpenClaw
+### OpenClaw（中文版）
 
 ```bash
 cd ~/.openclaw/workspace/skills/
 git clone https://github.com/EiraCao/schedule-everyday.git
 ```
 
-### Claude Code
+### OpenClaw（English version）
+
+```bash
+cd ~/.openclaw/workspace/skills/
+git clone -b en https://github.com/EiraCao/schedule-everyday.git
+```
+
+### Claude Code（中文版）
 
 ```bash
 cd ~/.claude/skills/
 git clone https://github.com/EiraCao/schedule-everyday.git
+```
+
+### Claude Code（English version）
+
+```bash
+cd ~/.claude/skills/
+git clone -b en https://github.com/EiraCao/schedule-everyday.git
 ```
 
 ## 文件结构
@@ -50,17 +64,11 @@ git clone https://github.com/EiraCao/schedule-everyday.git
 schedule-everyday/
 ├── SKILL.md                      # Skill 主文件
 ├── README.md                     # 中文文档（本文件）
-├── README.en.md                  # English documentation
 ├── references/
 │   ├── onboarding-flow.md        # Onboarding 流程
 │   ├── daily-sync-flow.md        # 日对齐流程
 │   ├── weekly-sync-flow.md       # 周对齐流程
-│   ├── classification-templates.md # 分类模板
-│   └── en/                       # English flow docs
-│       ├── onboarding-flow.md
-│       ├── daily-sync-flow.md
-│       ├── weekly-sync-flow.md
-│       └── classification-templates.md
+│   └── classification-templates.md # 分类模板
 └── assets/
     └── config_template.yaml      # 配置模板
 ```
