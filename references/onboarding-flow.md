@@ -72,13 +72,16 @@ Feature: Quantity control, 1 big + 3 medium + 5 small per day
 ...
 Feature: Introduces time dimension
 
-【Method D】Choose any of the above methods, plus an Exploration category. Using MoSCoW + Exploration as an example:
+In addition to the above methods, **if you have lots of creative ideas but feel pressured by long to-do lists**, you can also choose to add an **Exploration category** to any of the above classification methods.
+Exploration introduces a "no priority" dimension — items that don't promise any output. They can be moved to other categories anytime, at any priority level.
+
+【Method D】Using MoSCoW + Exploration as an example:
 - [Item 1] → Must (Must do)
 - [Item 2] → Should (Should do)
 - [Item 3] → Could (Could do)
-- [Item 4] → Someday (No priority)
+- [Item 4] → Exploration (No priority)
 ...
-Feature: Introduces a "no priority" dimension; Exploration items have no commitment to output. When you commit to producing something, they can be moved to other categories at any priority level. **Best for those who want to protect their creative ideas without the pressure of a long to-do list.**
+Feature: Protects creative ideas, best for those who feel pressured by long to-do lists.
 
 Which one do you prefer?
 ```
