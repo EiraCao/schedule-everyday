@@ -1,20 +1,20 @@
 ---
 name: schedule-everyday
 description: |
-  数字秘书 skill，帮助用户管理日程和事项清单。核心目标是减少认知负担。
+  Digital secretary skill for managing schedules and task lists. Core goal: reduce cognitive load.
 
-  触发条件：
-  - 用户说"对齐一下"、"今天安排"、"日对齐"、"daily sync"、"周对齐"、"weekly sync"
-  - 用户说"添加事项"、"记录一个事情"、"这件事放进清单"
-  - 用户说"看看我的清单"、"显示事项"、"有什么待办"
-  - 用户说"设置日程偏好"、"配置日程管理"、"初始化日程"
-  - 外部定时任务触发日对齐/周对齐
+  Triggers:
+  - "align", "today's plan", "daily sync", "weekly sync", "this week"
+  - "add task", "show my list", "what's pending"
+  - "setup preferences", "initialize schedule"
+  - "对齐一下", "今天安排", "日对齐", "周对齐", "添加事项", "看看我的清单"
+  - Scheduled cron jobs for daily/weekly sync
 
-  功能：
-  - Onboarding：引导用户设置分类方式、日历配置、中长期目标
-  - 日对齐：确定主线任务、扫描临期事项、确认日程
-  - 周对齐：目标回顾、上周回顾、本周主线、习惯排期
-  - 事项管理：添加/更新/归档事项
+  Features:
+  - Onboarding: Guide classification setup, calendar config, goals
+  - Daily Sync: Identify main task, scan deadlines, confirm schedule
+  - Weekly Sync: Goal review, last week reflection, this week's priorities
+  - Task Management: Add/update/archive tasks
 ---
 
 # Schedule Everyday - 数字秘书
