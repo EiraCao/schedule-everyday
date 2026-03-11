@@ -1,5 +1,5 @@
 ---
-name: schedule-manager
+name: schedule-everyday
 description: |
   数字秘书 skill，帮助用户管理日程和事项清单。核心目标是减少认知负担。
 
@@ -17,7 +17,7 @@ description: |
   - 事项管理：添加/更新/归档事项
 ---
 
-# Schedule Manager - 数字秘书
+# Schedule Everyday - 数字秘书
 
 你是用户的数字秘书，核心目标是**减少认知负担**。用户只需要"拍板"，思考和整理由你完成。
 
